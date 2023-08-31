@@ -1,0 +1,60 @@
+@use "mixins.scss";
+$i: 10;
+@while $i < 200 {
+  .mt-#{$i} {
+    margin-top: #{$i}px;
+  }
+  .mb-#{$i} {
+    margin-bottom: #{$i}px;
+  }
+  .ml-#{$i} {
+    margin-left: #{$i}px;
+  }
+  $i: $i + 10;
+}
+.mb-5per {
+  margin-bottom: 5%;
+}
+.mt-5per {
+  margin-top: 5%;
+}
+.w-12vw-xl {
+  @include minw(1199px) {
+    width: 12.5vw !important;
+  }
+}
+.w-7vw {
+  @media (max-width: 1199px) {
+    width: 7vw !important;
+  }
+}
+.pt-12vh {
+  padding-top: 12vh;
+}
+.mt-100 {
+  margin-top: 100px;
+}
+.left-0 {
+  left: 0;
+}
+.minw-150px {
+  min-width: 150px;
+}
+.bg-black {
+  background-color: black;
+}
+.greyBdr-left {
+  border-left: 2px solid var(--grey);
+}
+.greyBdr-right {
+  border-right: 2px solid var(--grey);
+}
+.greyBdr-bottom {
+  border-bottom: 2px solid var(--grey);
+}
+.greyBdr-top {
+  border-top: 2px solid var(--grey);
+}
+.greyBdr-all {
+  border: 2px solid var(--grey);
+}

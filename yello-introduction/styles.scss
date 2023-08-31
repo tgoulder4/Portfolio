@@ -1,0 +1,133 @@
+* {
+  margin: 0;
+  color: rgba(232, 232, 232, 0.972) !important;
+  list-style: none !important;
+  font-family: "Inter", sans-serif !important;
+}
+body {
+  margin: 0; // 1
+  background-color: #171717 !important; // 2
+  overflow: hidden;
+}
+.h-100vh {
+  height: 100vh;
+  width: 100%;
+}
+nav {
+  top: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color: #1b1b1b;
+  border: 1px solid #060606;
+  border-radius: 20px;
+}
+main {
+  margin-top: 24.5vh !important;
+}
+em {
+  font-weight: bold !important;
+  font-style: normal !important;
+}
+h1 {
+  font-weight: 700 !important;
+  line-height: 0.9;
+}
+a {
+  text-decoration: none !important;
+}
+svg {
+  margin-bottom: 4.5vh;
+}
+article {
+  padding-left: 13vw;
+}
+#backElipse {
+  position: absolute;
+  top: 27vh;
+  left: 50vw;
+  z-index: -1;
+  width: 278px;
+  height: 262px;
+  border-radius: 100%;
+  background-color: #f69e0c;
+  filter: blur(6rem);
+}
+.brand {
+  font-size: 25px;
+  font-family: "Ultra", serif !important;
+  letter-spacing: -0.6px;
+  border: #060606;
+}
+.gap-10px {
+  gap: 10px !important;
+}
+.brand {
+  margin: 0 !important;
+}
+.btn {
+  font-weight: 600 !important;
+  color: #ffff !important;
+  background-color: #be8c27 !important;
+}
+.w-80 {
+  width: 80% !important;
+}
+.contents {
+  max-width: 750px !important;
+}
+// .outline-orange {
+//   border: 2px solid #ff8c00;
+//   max-width: 750px !important;
+// }
+.subcontainer {
+  flex-basis: 450px;
+  position: relative;
+  top: -10px;
+  margin-bottom: -40px;
+  min-height: 100px;
+  flex-shrink: 0;
+  width: 500px;
+  height: 300px;
+  border: 2px solid #90909000;
+  border-radius: 30px;
+  background-color: #1b1b1b;
+}
+.subContent {
+  padding: 20px;
+}
+.subNav::after {
+  content: "";
+  width: 80%;
+  height: 2px;
+  background-color: #919191;
+}
+footer {
+  width: 100vw;
+  height: 100%;
+  .fillerRect {
+    background-color: #1c1c1c;
+    left: 0;
+    z-index: -1;
+  }
+  p {
+    z-index: 2;
+    padding-top: 20px;
+    position: relative;
+  }
+}
+// Reboot
+//
+// Normalization of HTML elements, manually forked from Normalize.css to remove
+// styles targeting irrelevant browsers while applying new styles.
+//
+// Normalize is licensed MIT. https://github.com/necolas/normalize.css
+
+// Document
+//
+// Change from `box-sizing: content-box` so that `width` is not affected by `padding` or `border`.
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}

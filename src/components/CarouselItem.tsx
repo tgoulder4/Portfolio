@@ -1,21 +1,31 @@
 export type CarouselItemProps = {
-  title: string;
-  roleDescription: string;
-  company: string;
-  companyInfo: string;
-  img: string;
-  url: string;
-  nextItemTitle: string;
+  active: boolean;
+  item: {
+    id: number;
+    title: string;
+    roleDescription: string;
+    company: string;
+    companyInfo: string;
+    img: string;
+    url: string;
+    nextItemTitle: string;
+  };
+  key: number;
 };
-export function CarouselItem(item: CarouselItemProps) {
+export function CarouselItem(Props: CarouselItemProps) {
+  const { item, active } = Props;
   return (
     <>
-      <div className="carousel-item">
+      <div
+        className={`carousel-item flex-col justify-between h-100 first-line:${
+          active ? "active flex" : ""
+        }`}
+      >
         <span>
           <img src={item.img} alt={item.company} />
           <div className="flex flex-col">
-            <h2>
-              {item.title} @{item.company}
+            <h2 className="text-[30pt] font-bold">
+              {item.title} {item.company ? "@" + item.company : ""}
             </h2>
             <p className="italic">{item.companyInfo}</p>
           </div>
@@ -23,10 +33,17 @@ export function CarouselItem(item: CarouselItemProps) {
         <p>{item.roleDescription}</p>
         <div className="flex justify-between">
           <div className="flex">
-            <button>Go to site</button>
-            <button>See more</button>
+            <a
+              href={item.url}
+              target="_blank"
+              className="bg-[var(--primaryColour)] hover:bg-slate-800 border-gray-800 text-white px-4 py-2"
+            >
+              Take a look
+            </a>
           </div>
-          <button>Next project: {item.nextItemTitle}</button>
+          <a className="whitespace-nowrap py-2 px-4 text-black bg-white hover:bg-gray-100 border-2 border-gray-300">
+            Next project: {item.nextItemTitle}
+          </a>
         </div>
       </div>
     </>

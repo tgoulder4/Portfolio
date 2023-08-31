@@ -1,9 +1,29 @@
 import Carousel from "./components/Carousel";
 import { CarouselItemProps } from "./components/CarouselItem";
-const items: CarouselItemProps = [{
-  title: "Creator of Trainspy",
-  roleDescription: "Created Trainspy API, a RESTful API that provides real-time train information for the UK rail network. Reached over 800 downloads in less than a week.",
-}]
+const items: Array<CarouselItemProps["item"]> = [
+  {
+    id: 1,
+    title: "Trainspy",
+    roleDescription:
+      "Created Trainspy, an API that provides real-time train information for the UK rail network. Reached over 800 downloads in less than 3 days.",
+    company: "",
+    companyInfo: "",
+    img: "",
+    url: "https://tgoulder4.github.io/projects/trainspy/",
+    nextItemTitle: "",
+  },
+  {
+    id: 2,
+    title: "LearnMate",
+    roleDescription:
+      "Created LearnMate, an API that provides real-time train information for the UK rail network. Reached over 800 downloads in less than 3 days.",
+    company: "",
+    companyInfo: "",
+    img: "",
+    url: "",
+    nextItemTitle: "",
+  },
+];
 
 function App() {
   return (
@@ -190,7 +210,7 @@ function App() {
                     className="purple3 analysis analysis-Purple greyBdr-left d-flex flex-column align-items-start justify-content-center"
                   >
                     <i className="fa-sharp fa-solid fa-quote-left"></i>
-                    <p>
+                    <p className="text-sm">
                       With a keen eye for user experience, I continually refine
                       my product design skills while practicing my front-end
                       development abilities to create intuitive projects.
@@ -212,10 +232,12 @@ function App() {
                         <p>TOP</p>
                         {/* <p>View all</p> */}
                       </div>
-                      <h2>CREATIONS</h2>
-                      <h2 className="text-[var(--gray)]">//////////////////</h2>
+                      <h2 className="projectTitleText">CREATIONS</h2>
+                      <h2 className="projectTitleText text-[var(--gray)]">
+                        //////////////////
+                      </h2>
                     </div>
-                     <Carousel(items) /> {/* how do I pass items to Carousel? */}
+                    <Carousel items={items} />
                   </div>
                   <div className="githubWrapper greyBdr-left greyBdr-right greyBdr-bottom">
                     <div className="analysis analysis-Purple shortHeightWrapper">

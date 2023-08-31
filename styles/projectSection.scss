@@ -1,0 +1,14 @@
+@import "../abstract/mixins.scss";
+@import "../abstract/variables.scss";
+
+#projectCards {
+  row-gap: $projectCardSeparation;
+  column-gap: $projectCardSeparation;
+  .secondAndThirdProjectContainer {
+    width: 100%;
+    column-gap: $projectCardSeparation;
+    @include minw($BPmd) {
+      column-gap: $projectCardSeparation;
+    }
+  }
+}

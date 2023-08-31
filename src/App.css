@@ -316,7 +316,7 @@
   --vlineWidth: 0.2vh;
   --hLineHeight: 0.2vh;
   --lineColour: #191919;
-  --primary_colour: #191919;
+  --primaryColour: #191919;
   --secondary_colour: #2f2f2f;
   --grey: #c8c8c8;
   --desk1Container1Width: 630px; /*at a window width 1000*/
@@ -347,7 +347,7 @@ html {
 
 #rails {
   width: 100%;
-  border-bottom: 15px solid var(--primary_colour);
+  border-bottom: 15px solid var(--primaryColour);
   display: flex;
   justify-content: center;
   margin-top: var(--navHeight);
@@ -436,7 +436,7 @@ html {
   height: 100%;
 }
 #rails #mainReveal #center #shapeShift-container #shapeShift {
-  background-color: var(--primary_colour);
+  background-color: var(--primaryColour);
 }
 #rails #mainReveal #center #shapeShift-container #shapeShift .block {
   background-color: white;
@@ -485,7 +485,7 @@ html {
 }
 
 #shapeShift-container {
-  background-color: var(--primary_colour);
+  background-color: var(--primaryColour);
 }
 #shapeShift-container #shapeshift {
   position: relative;
@@ -630,7 +630,7 @@ html {
 
 nav {
   height: var(--navHeight);
-  background-color: var(--primary_colour);
+  background-color: var(--primaryColour);
   top: 0;
   left: 0;
   padding-left: 3%;
@@ -653,7 +653,7 @@ nav ul li a {
 }
 
 .black {
-  background-color: var(--primary_colour);
+  background-color: var(--primaryColour);
 }
 
 .italic {
@@ -748,28 +748,21 @@ nav ul li a {
 }
 #red #yellow3 .cyan2 {
   display: grid;
-}
-@media (max-width: 1199px) {
-  #red #yellow3 .cyan2 {
-    grid-template-areas: "summary summary" "projectArea projectArea" "githubArea githubArea";
-    width: 100%;
-    grid-template-rows: auto auto auto;
-    grid-template-columns: auto;
-    border-left: none;
-  }
-  #red #yellow3 .cyan2 #place1,
-  #red #yellow3 .cyan2 #place3,
-  #red #yellow3 .cyan2 #place4,
-  #red #yellow3 .cyan2 #place5 {
-    display: none;
-  }
+  grid-template-areas: "summary" "projectArea" "githubArea";
+  width: 100%;
+  grid-template-rows: auto auto auto;
+  grid-template-columns: auto;
 }
 @media (min-width: 1199px) {
   #red #yellow3 .cyan2 {
-    grid-template-areas: "blank summary blank2" "projectArea projectArea githubArea";
-    grid-template-rows: auto auto;
-    grid-template-columns: var(--GREYBLOCKWIDTH) auto var(--GREYBLOCKWIDTH);
+    width: calc(100% - var(--CYANMARGINWIDTH));
   }
+}
+#red #yellow3 .cyan2 #place1,
+#red #yellow3 .cyan2 #place3,
+#red #yellow3 .cyan2 #place4,
+#red #yellow3 .cyan2 #place5 {
+  display: none;
 }
 #red #yellow3 .cyan2 #place1 {
   grid-area: blank;
@@ -787,6 +780,9 @@ nav ul li a {
 #red #yellow3 .cyan2 #quoteArea {
   grid-area: summary;
   padding: 50px;
+  padding: 5vw !important;
+  border-right: 2px solid var(--grey);
+  border-left: none;
 }
 #red #yellow3 .cyan2 .purple3 p,
 #red #yellow3 .cyan2 #quoteArea p {
@@ -794,23 +790,11 @@ nav ul li a {
   font-size: 1.3rem;
   font-style: italic;
 }
-@media (max-width: 1199px) {
-  #red #yellow3 .cyan2 .purple3,
-  #red #yellow3 .cyan2 #quoteArea {
-    padding: 5vw !important;
-    border-right: 2px solid var(--grey);
-    border-left: none;
-  }
-}
 #red #yellow3 .cyan2 .purple4 {
   grid-area: projectArea;
   padding: 50px;
   gap: 30px;
-}
-@media (max-width: 1199px) {
-  #red #yellow3 .cyan2 .purple4 {
-    border-right: 2px solid var(--grey);
-  }
+  border-right: 2px solid var(--grey);
 }
 #red #yellow3 .cyan2 .purple4 #scrollContainer {
   width: 100%;
@@ -1078,7 +1062,11 @@ nav ul li a {
     display: none;
   }
 }
-#projectArea h2,
+.carousel-item.active {
+  display: flex;
+}
+
+.projectTitleText,
 #aboutMeSection h2,
 #contactMeSection h2 {
   font-weight: 800;
@@ -1086,14 +1074,14 @@ nav ul li a {
   font-size: 6vw;
 }
 @media (max-width: 1199px) {
-  #projectArea h2,
+  .projectTitleText,
   #aboutMeSection h2,
   #contactMeSection h2 {
     font-size: 8vw;
   }
 }
 @media (max-width: 768px) {
-  #projectArea h2,
+  .projectTitleText,
   #aboutMeSection h2,
   #contactMeSection h2 {
     font-size: 10vw;

@@ -6,7 +6,7 @@
 
 #rails {
   width: 100%;
-  border-bottom: 15px solid var(--primary_colour);
+  border-bottom: 15px solid var(--primaryColour);
   display: flex;
   justify-content: center;
   margin-top: var(--navHeight);
@@ -97,7 +97,7 @@
         height: 100%;
 
         #shapeShift {
-          background-color: var(--primary_colour);
+          background-color: var(--primaryColour);
           .block {
             background-color: white;
           }
@@ -148,7 +148,7 @@
 ////////////////////////////////////////
 ///
 #shapeShift-container {
-  background-color: var(--primary_colour);
+  background-color: var(--primaryColour);
   //try that or #shapeshift
   #shapeshift {
     position: relative;
@@ -302,8 +302,8 @@
 }
 nav {
   height: var(--navHeight);
-  background-color: var(--primary_colour);
-  // color: var(--primary_colour);
+  background-color: var(--primaryColour);
+  // color: var(--primaryColour);
   top: 0;
   left: 0;
   padding-left: 3%;
@@ -326,7 +326,7 @@ nav {
   background-color: var(--grey);
 }
 .black {
-  background-color: var(--primary_colour);
+  background-color: var(--primaryColour);
 }
 .italic {
   font-style: italic;
@@ -419,28 +419,22 @@ nav {
   #yellow3 {
     .cyan2 {
       display: grid;
-      @media (max-width: $BPxl) {
-        grid-template-areas:
-          "summary summary"
-          "projectArea projectArea" "githubArea githubArea";
-        width: 100%;
-        grid-template-rows: auto auto auto;
-        grid-template-columns: auto;
-        #place1,
-        #place3,
-        #place4,
-        #place5 {
-          display: none;
-        }
-        border-left: none;
+      grid-template-areas:
+        "summary"
+        "projectArea" "githubArea";
+      width: 100%;
+      @include minw($BPxl) {
+        width: calc(100% - var(--CYANMARGINWIDTH));
       }
-      @media (min-width: $BPxl) {
-        grid-template-areas:
-          "blank summary blank2"
-          "projectArea projectArea githubArea";
-        grid-template-rows: auto auto;
-        grid-template-columns: var(--GREYBLOCKWIDTH) auto var(--GREYBLOCKWIDTH);
+      grid-template-rows: auto auto auto;
+      grid-template-columns: auto;
+      #place1,
+      #place3,
+      #place4,
+      #place5 {
+        display: none;
       }
+
       #place1 {
         grid-area: blank;
       }
@@ -462,19 +456,17 @@ nav {
           font-size: 1.3rem;
           font-style: italic;
         }
-        @include maxw($BPxl) {
-          padding: 5vw !important;
-          border-right: 2px solid var(--grey);
-          border-left: none;
-        }
+        padding: 5vw !important;
+        border-right: 2px solid var(--grey);
+        border-left: none;
       }
       .purple4 {
         grid-area: projectArea;
         padding: 50px;
         gap: 30px;
-        @include maxw($BPxl) {
-          border-right: 2px solid var(--grey);
-        }
+
+        border-right: 2px solid var(--grey);
+
         #scrollContainer {
           width: 100%;
         }
@@ -746,7 +738,10 @@ nav {
     display: none;
   }
 }
-#projectArea h2,
+.carousel-item.active {
+  display: flex;
+}
+.projectTitleText,
 #aboutMeSection h2,
 #contactMeSection h2 {
   font-weight: 800;
