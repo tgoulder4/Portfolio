@@ -32,17 +32,15 @@ export function CarouselItem(Props: CarouselItemProps) {
         </span>
         <p>{item.roleDescription}</p>
         <div className="flex justify-between">
-          <div className="flex">
-            <a
-              href={item.url}
-              target="_blank"
-              className="bg-[var(--primaryColour)] hover:bg-slate-800 border-gray-800 text-white px-4 py-2"
-            >
-              Take a look
-            </a>
-          </div>
           <a className="whitespace-nowrap py-2 px-4 text-black bg-white hover:bg-gray-100 border-2 border-gray-300">
             Next: {item.nextItemTitle}
+          </a>
+          <a
+            href={item.url}
+            target="_blank"
+            className="bg-[var(--primaryColour)] hover:bg-slate-800 border-gray-800 text-white px-4 py-2"
+          >
+            Take a look
           </a>
         </div>
       </div>

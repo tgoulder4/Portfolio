@@ -317,7 +317,7 @@
   --hLineHeight: 0.2vh;
   --lineColour: #191919;
   --primaryColour: #191919;
-  --secondary_colour: #2f2f2f;
+  --secondary_colour: #090909;
   --grey: #c8c8c8;
   --desk1Container1Width: 630px; /*at a window width 1000*/
   --desk2Container1Width: 1031px; /*at a window width 1600*/
@@ -355,6 +355,10 @@ html {
   animation: introduceWidth 2s cubic-bezier(0.2, 0.01, 0.29, 0.98) forwards;
 }
 
+.topCoverAnim {
+  animation: fadeToTransparent 2s cubic-bezier(0.2, 0.01, 0.29, 0.98) forwards;
+}
+
 #rails {
   width: 100%;
   border-bottom: 15px solid var(--primaryColour);
@@ -369,11 +373,11 @@ html {
 #rails .cover {
   width: 100%;
   background-color: var(--secondary_colour);
-  height: 1250px;
-  z-index: 2;
+  height: 2000px;
+  z-index: 3;
 }
 #rails #mainReveal {
-  width: 0;
+  width: 8vw;
   height: 100%;
   display: flex;
   flex-direction: row;
@@ -444,9 +448,6 @@ html {
   align-items: center;
   height: 100%;
 }
-#rails #mainReveal #center #shapeShift-container #shapeShift {
-  background-color: var(--primaryColour);
-}
 #rails #mainReveal #center #shapeShift-container #shapeShift .block {
   background-color: white;
 }
@@ -513,30 +514,24 @@ html {
 }
 
 @keyframes ssGap {
-  20% {
+  60% {
     width: 109px;
   }
   81% {
     width: calc(50% - 1px);
   }
+  100% {
+    width: 109px;
+  }
 }
 @keyframes ssTopBlocksMoveDown {
-  0% {
-    top: 0px;
-  }
-  20% {
-    /*State 1*/
-  }
-  40% {
-    /*State 2*/
-    top: 50%;
-  }
   60% {
     /*State 3*/
-    top: 50%;
+    top: 0;
   }
   80% {
     /*State 4*/
+    top: 50%;
   }
   81% {
     /*Reset back to original*/
@@ -607,7 +602,7 @@ html {
 
 @keyframes introduceWidth {
   from {
-    width: 0vw;
+    width: 8vw;
   }
   to {
     width: 100vw;
@@ -619,6 +614,14 @@ html {
   }
   to {
     background-color: white;
+  }
+}
+@keyframes fadeToTransparent {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
   }
 }
 .greyBdr-left {
@@ -958,7 +961,7 @@ nav ul li a {
   right: 0;
   width: calc(12.5vw - var(--CYANMARGINWIDTH));
   background-color: var(--primaryColour);
-  height: calc(76vw - var(--CYANMARGINWIDTH));
+  height: 800px;
   z-index: -1;
 }
 #red .fillerContainer .Lfiller {

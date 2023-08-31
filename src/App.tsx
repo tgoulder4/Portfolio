@@ -29,6 +29,7 @@ function App() {
   return (
     <>
       <header>
+        <div className="topCover z-[4] absolute w-full h-full bg-[var(--secondary\_colour)]"></div>
         <div id="rails" className="">
           {/*auto layout, 'sliding' across rails. width is screen width + 2* size of width of 1 cover. (0.5vw). center by display:flex justify-content: center on html*/}
           <div className="cover" id="coverLeft"></div>
@@ -115,10 +116,31 @@ function App() {
           <div className="cover" id="coverRight"></div>
           {/*covers have the highest z-index, and always cover viewport height until reveal. disable scroll while covered*/}
         </div>
-        <nav className="position-absolute w-100 back-color-primary d-flex justify-content-center align-items-center">
-          <ul className="w-100 d-flex justify-items-center justify-content-between">
+        <nav
+          id="navbar"
+          className="position-absolute z-[3] w-100 back-color-primary d-flex justify-content-center align-items-center"
+        >
+          <ul className="w-100 d-flex justify-items-center items-center justify-content-between">
             <li>
               <a href="#contact">CONTACT</a>
+            </li>
+            <li>
+              <div
+                className="p-2 bg-orange-800 items-center text-orange-100 leading-none lg:rounded-full flex lg:inline-flex"
+                role="alert"
+              >
+                <span className="flex rounded-full bg-orange-500 uppercase px-2 py-1 text-xs font-bold mr-3">
+                  Warning
+                </span>
+                <span className="font-semibold mr-2 text-left flex-auto">
+                  This site is partially complete. Check back later!
+                </span>
+                <svg
+                  className="fill-current opacity-75 h-4 w-4"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 20 20"
+                ></svg>
+              </div>
             </li>
             <li className="moveLeft">
               <a href="#about">ABOUT</a>
@@ -241,13 +263,10 @@ function App() {
                       id="ttleProjects"
                       className="green2 analysis analysis-Red d-flex flex-column"
                     >
-                      <div className="legend d-flex justify-content-between">
-                        <p>TOP</p>
-                        {/* <p>View all</p> */}
-                      </div>
-                      <h2 className="projectTitleText">CREATIONS</h2>
+                      <div className="legend d-flex justify-content-between"></div>
+                      <h2 className="projectTitleText">MY WORK</h2>
                       <h2 className="projectTitleText text-[var(--gray)]">
-                        ///////////////////
+                        ////////////////
                       </h2>
                     </div>
                     <Carousel items={items} />

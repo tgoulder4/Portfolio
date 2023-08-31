@@ -10,6 +10,12 @@ $(document).ready(function async() {
   setTimeout(function () {
     $("#mainReveal").addClass("mainRevealAnim");
     $(".cover").addClass("coverAnim");
+    $(".topCover").addClass("topCoverAnim");
+  }, 1000);
+  setTimeout(function () {
+    $(".topCover").addClass("hidden");
+    $("#navbar").removeClass("z-[3]");
+    $("#navbar").addClass("z-[2]");
   }, 1000);
 });
 
