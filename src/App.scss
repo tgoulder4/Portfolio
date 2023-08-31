@@ -3,7 +3,12 @@
 @import "abstract/mixins.scss";
 @import "abstract/variables.scss";
 @import "abstract/reset.scss";
-
+.coverAnim {
+  @include introAnimation(introduceOpacity);
+}
+.mainRevealAnim {
+  @include introAnimation(introduceWidth);
+}
 #rails {
   width: 100%;
   border-bottom: 15px solid var(--primaryColour);
@@ -20,10 +25,11 @@
     background-color: var(--secondary_colour);
     height: 1250px;
     z-index: 2;
-    @include introAnimation(introduceOpacity);
+    //COVERANIM WAS HERE
   }
   #mainReveal {
-    @include introAnimation(introduceWidth);
+    //MAINREVEALANIM WAS HERE
+    width: 0;
     height: 100%;
     display: flex;
     flex-direction: row;
@@ -129,7 +135,9 @@
 
 #fanaticalTitle {
   line-height: 0.9;
-  font-size: 9.5vw;
+  @media (min-width: 640px) {
+    text-align: left !important;
+  }
 }
 
 #projectCards {
@@ -333,13 +341,11 @@ nav {
 }
 
 #red {
-  @include maxw($BPmd) {
-    width: 90% !important;
+  @include maxw(640px) {
+    border-left: none !important;
   }
   #lFiller1 {
     margin-top: var(--CYANMARGINWIDTH);
-
-    max-height: 1500px;
   }
   #yellow1 {
     #cyan {
@@ -349,34 +355,17 @@ nav {
         padding-bottom: var(--CYANMARGINWIDTH);
       }
       #purple2 {
-        padding-top: var(--CYANMARGINWIDTH);
-        @include maxw($BPxl) {
-          margin-left: 5vw !important;
-        }
         h1 {
           font-weight: 700;
           line-height: 0.9;
-          font-size: 9.5vw;
-          width: 10%;
-          @include maxw($BPxl) {
-            font-size: 12vw !important;
-          }
-          @include maxw($BPmd) {
-            font-size: 15vw !important;
-          }
           ::after {
             content: "";
             position: absolute;
-            top: 10px;
+            top: 8px;
             left: -18px;
-            width: 53vw;
-            height: 10vh;
+            width: 530px;
+            height: 69px;
             z-index: -1;
-
-            @include maxw($BPxl) {
-              width: 72vw !important;
-              height: 9vw !important;
-            }
             @include maxw($BPmd) {
               display: none;
             }
@@ -387,7 +376,7 @@ nav {
         h3 {
           font-size: 1.2rem;
         }
-        h3:nth-child(4) {
+        h3 {
           color: var(--gray);
         }
         em {
@@ -425,6 +414,7 @@ nav {
       width: 100%;
       @include minw($BPxl) {
         width: calc(100% - var(--CYANMARGINWIDTH));
+        border-left: 2px solid var(--grey);
       }
       grid-template-rows: auto auto auto;
       grid-template-columns: auto;
@@ -456,7 +446,6 @@ nav {
           font-size: 1.3rem;
           font-style: italic;
         }
-        padding: 5vw !important;
         border-right: 2px solid var(--grey);
         border-left: none;
       }
@@ -505,7 +494,7 @@ nav {
                 margin-bottom: 2px;
               }
               .btn-info {
-                background-color: black !important;
+                background-color: var(--primaryColour) !important;
                 color: white !important;
               }
             }
@@ -522,7 +511,7 @@ nav {
           grid-area: githubArea;
           padding: 30px;
           i {
-            color: black !important;
+            color: var(--primaryColour) !important;
           }
         }
       }
@@ -628,7 +617,7 @@ nav {
             padding-left: 40px;
             padding-right: 40px;
             h3 {
-              color: black;
+              color: var(--primaryColour);
               em {
                 font-weight: bold;
                 font-style: normal;
@@ -650,7 +639,7 @@ nav {
       margin-top: var(--CYANMARGINWIDTH);
       right: 0;
       width: calc(12.5vw - var(--CYANMARGINWIDTH));
-      background-color: black;
+      background-color: var(--primaryColour);
       height: calc(76vw - var(--CYANMARGINWIDTH));
       z-index: -1;
     }
@@ -746,17 +735,11 @@ nav {
 #contactMeSection h2 {
   font-weight: 800;
   line-height: 0.9;
-  font-size: 6vw;
-  @include maxw($BPxl) {
-    font-size: 8vw;
-  }
-  @include maxw($BPmd) {
-    font-size: 10vw;
-  }
+  font-size: 50pt;
 }
 .cyan {
   margin-left: var(--CYANMARGINWIDTH);
-  @media (max-width: 1199px) {
+  @media (max-width: 1200px) {
     margin-left: 0 !important;
   }
 }
@@ -768,7 +751,7 @@ nav {
 }
 .divider,
 .Divider {
-  background-color: black;
+  background-color: var(--primaryColour);
 }
 .Divider {
   height: calc(var(--DIVIDER1HEIGHT) / 2);

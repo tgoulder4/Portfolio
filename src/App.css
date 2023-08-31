@@ -327,6 +327,8 @@
   --CYANMARGINWIDTH: 70px;
   --GREYBLOCKWIDTH: 150px;
   --projectCardHeight: 375px;
+  --standardMargin: 50px;
+  --mobileStandardMargin: 20px;
 }
 
 * {
@@ -345,6 +347,14 @@ html {
   overflow-x: hidden;
 }
 
+.coverAnim {
+  animation: introduceOpacity 2s cubic-bezier(0.2, 0.01, 0.29, 0.98) forwards;
+}
+
+.mainRevealAnim {
+  animation: introduceWidth 2s cubic-bezier(0.2, 0.01, 0.29, 0.98) forwards;
+}
+
 #rails {
   width: 100%;
   border-bottom: 15px solid var(--primaryColour);
@@ -361,10 +371,9 @@ html {
   background-color: var(--secondary_colour);
   height: 1250px;
   z-index: 2;
-  animation: introduceOpacity 2s cubic-bezier(0.2, 0.01, 0.29, 0.98) forwards;
 }
 #rails #mainReveal {
-  animation: introduceWidth 2s cubic-bezier(0.2, 0.01, 0.29, 0.98) forwards;
+  width: 0;
   height: 100%;
   display: flex;
   flex-direction: row;
@@ -467,7 +476,11 @@ html {
 
 #fanaticalTitle {
   line-height: 0.9;
-  font-size: 9.5vw;
+}
+@media (min-width: 640px) {
+  #fanaticalTitle {
+    text-align: left !important;
+  }
 }
 
 #projectCards {
@@ -660,58 +673,31 @@ nav ul li a {
   font-style: italic;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 640px) {
   #red {
-    width: 90% !important;
+    border-left: none !important;
   }
 }
 #red #lFiller1 {
   margin-top: var(--CYANMARGINWIDTH);
-  max-height: 1500px;
 }
 #red #yellow1 #cyan #greySocials {
   padding-top: var(--CYANMARGINWIDTH);
   padding-bottom: var(--CYANMARGINWIDTH);
 }
-#red #yellow1 #cyan #purple2 {
-  padding-top: var(--CYANMARGINWIDTH);
-}
-@media (max-width: 1199px) {
-  #red #yellow1 #cyan #purple2 {
-    margin-left: 5vw !important;
-  }
-}
 #red #yellow1 #cyan #purple2 h1 {
   font-weight: 700;
   line-height: 0.9;
-  font-size: 9.5vw;
-  width: 10%;
-}
-@media (max-width: 1199px) {
-  #red #yellow1 #cyan #purple2 h1 {
-    font-size: 12vw !important;
-  }
-}
-@media (max-width: 768px) {
-  #red #yellow1 #cyan #purple2 h1 {
-    font-size: 15vw !important;
-  }
 }
 #red #yellow1 #cyan #purple2 h1 ::after {
   content: "";
   position: absolute;
-  top: 10px;
+  top: 8px;
   left: -18px;
-  width: 53vw;
-  height: 10vh;
+  width: 530px;
+  height: 69px;
   z-index: -1;
   background-color: var(--lighterGrey);
-}
-@media (max-width: 1199px) {
-  #red #yellow1 #cyan #purple2 h1 ::after {
-    width: 72vw !important;
-    height: 9vw !important;
-  }
 }
 @media (max-width: 768px) {
   #red #yellow1 #cyan #purple2 h1 ::after {
@@ -722,7 +708,7 @@ nav ul li a {
 #red #yellow1 #cyan #purple2 h3 {
   font-size: 1.2rem;
 }
-#red #yellow1 #cyan #purple2 h3:nth-child(4) {
+#red #yellow1 #cyan #purple2 h3 {
   color: var(--gray);
 }
 #red #yellow1 #cyan #purple2 em {
@@ -756,6 +742,7 @@ nav ul li a {
 @media (min-width: 1199px) {
   #red #yellow3 .cyan2 {
     width: calc(100% - var(--CYANMARGINWIDTH));
+    border-left: 2px solid var(--grey);
   }
 }
 #red #yellow3 .cyan2 #place1,
@@ -780,7 +767,6 @@ nav ul li a {
 #red #yellow3 .cyan2 #quoteArea {
   grid-area: summary;
   padding: 50px;
-  padding: 5vw !important;
   border-right: 2px solid var(--grey);
   border-left: none;
 }
@@ -835,7 +821,7 @@ nav ul li a {
   margin-bottom: 2px;
 }
 #red #yellow3 .cyan2 .purple4 .green3 .projectCard summary .btn-info {
-  background-color: black !important;
+  background-color: var(--primaryColour) !important;
   color: white !important;
 }
 #red #yellow3 .cyan2 .githubWrapper {
@@ -850,7 +836,7 @@ nav ul li a {
   padding: 30px;
 }
 #red #yellow3 .cyan2 .githubWrapper #purple5 i {
-  color: black !important;
+  color: var(--primaryColour) !important;
 }
 #red #yellow4 #aboutMeSection {
   display: grid;
@@ -957,7 +943,7 @@ nav ul li a {
   padding-right: 40px;
 }
 #red #yellow4 #skillSetArea .myEvolvingSkillset .skillSetContainer .cert h3 {
-  color: black;
+  color: var(--primaryColour);
 }
 #red #yellow4 #skillSetArea .myEvolvingSkillset .skillSetContainer .cert h3 em {
   font-weight: bold;
@@ -971,7 +957,7 @@ nav ul li a {
   margin-top: var(--CYANMARGINWIDTH);
   right: 0;
   width: calc(12.5vw - var(--CYANMARGINWIDTH));
-  background-color: black;
+  background-color: var(--primaryColour);
   height: calc(76vw - var(--CYANMARGINWIDTH));
   z-index: -1;
 }
@@ -1071,27 +1057,13 @@ nav ul li a {
 #contactMeSection h2 {
   font-weight: 800;
   line-height: 0.9;
-  font-size: 6vw;
-}
-@media (max-width: 1199px) {
-  .projectTitleText,
-  #aboutMeSection h2,
-  #contactMeSection h2 {
-    font-size: 8vw;
-  }
-}
-@media (max-width: 768px) {
-  .projectTitleText,
-  #aboutMeSection h2,
-  #contactMeSection h2 {
-    font-size: 10vw;
-  }
+  font-size: 50pt;
 }
 
 .cyan {
   margin-left: var(--CYANMARGINWIDTH);
 }
-@media (max-width: 1199px) {
+@media (max-width: 1200px) {
   .cyan {
     margin-left: 0 !important;
   }
@@ -1107,7 +1079,7 @@ nav ul li a {
 
 .divider,
 .Divider {
-  background-color: black;
+  background-color: var(--primaryColour);
 }
 
 .Divider {

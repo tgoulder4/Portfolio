@@ -66,10 +66,13 @@ function App() {
               </div>
               <div
                 id="shapeShift-container"
-                className="flex justify-center p-[50px]"
+                className="flex justify-center p-[var(--standardMargin)]"
               >
                 {/*shapeshift group*/}
-                <div id="shapeShift" className="h-100 relative w-[300px]">
+                <div
+                  id="shapeShift"
+                  className="h-100 relative min-w-[300px] z-10"
+                >
                   <div
                     id="topPart"
                     className="absolute flex h-1/5 w-full justify-between"
@@ -123,18 +126,17 @@ function App() {
           </ul>
         </nav>
       </header>
-      {/*overall recreated layout*/}
       <main
         id="green"
         className="analysis analysis-Green d-flex justify-content-center position-relative"
       >
         <div
           id="red"
-          className="analysis analysis-Red d-flex greyBdr-left flex-column w-3/4"
+          className="analysis analysis-Red d-flex greyBdr-left flex-column sm:w-3/4 w-full"
         >
           <div
             id="lFiller1"
-            className="filler position-absolute d-none d-md-block left-0 w-7vw w-12vw-xl bg-black mt-100 goesToLeft h-full"
+            className="filler position-absolute hidden sm:block left-0 w-7vw md:w-[12.5vw] bg-[var(--primaryColour)] mt-100 goesToLeft h-[1270px]"
           ></div>
           {/* absolute, move this to the left and down, left 0*/}
           <section
@@ -149,14 +151,23 @@ function App() {
               <div className="fullHeightLeftVertGreyLine h-100 position-relative"></div>
               {/*spans the whole height*/}
 
-              <div className="analysis analysis-Purple deskLeftBanner minw-150px h-full ml-[-2px] d-none d-xl-flex greyBdr-all w-var-greyblw">
+              <div className="analysis analysis-Purple deskLeftBanner minw-150px h-full ml-[-2px] d-none d-xl-flex greyBdr-left greyBdr-right w-var-greyblw bg-[var(--lighterGrey)] justify-center">
                 <div
                   id="greySocials"
-                  className="greySocialsContainer d-flex flex-row flex-xl-column"
+                  className="greySocialsContainer flex flex-col justify-between pb-[var(--standardMargin)] mt-[var(--CYANMARGINWIDTH)]"
                 >
-                  {/*linkedIn icon*/}
-                  {/*mail icon*/}
-                  {/*phone icon*/}
+                  <a
+                    href="https://www.linkedin.com/in/tye-goulder-2b59b4256/"
+                    target="_blank"
+                  >
+                    <i className="fa-brands fa-linkedin text-[var(--primaryColour)] text-2xl"></i>
+                  </a>
+                  <a href="mailto:tcjgoulder@gmail.com" target="_blank">
+                    <i className="fa-solid fa-envelope text-[var(--primaryColour)] text-2xl"></i>
+                  </a>
+                  <a href="tel:+447342159087" target="_blank">
+                    <i className="fa-solid fa-phone text-[var(--primaryColour)] text-2xl"></i>
+                  </a>
                 </div>
               </div>
               <div className="longLeft-RightVertGreyLine h-30px relative"></div>
@@ -164,18 +175,20 @@ function App() {
               {/*ml-40 is needed for non analysis alignment*/}
               <article
                 id="purple2"
-                className="analysis analysis-Purple ml-[52px] mb-[60px] meFanaticalAndDescription"
+                className="analysis analysis-Purple sm:ml-[52px] sm:mb-[60px] sm:pt-[var(--CYANMARGINWIDTH)] pt-[var(--mobileStandardMargin)] meFanaticalAndDescription"
               >
                 <summary className="whoAndWhatIAm mb-[40px] d-none d-xl-flex justify-between">
                   <h3>TYE GOULDER</h3>
-                  <h3>BACK-END DEVELOPER</h3>
+                  <h3>-</h3>
+                  <h3>SOFTWARE DEVELOPER</h3>
                   <h3>|</h3>
                   <h3>LOVES OVERWATCH</h3>
                 </summary>
                 <div className="highlighted relative"></div>
+                {/* a */}
                 <h1
                   id="fanaticalTitle"
-                  className="position-relative lineh-0p9 font-semibold mb-[10px]"
+                  className="position-relative lineh-0p9 font-semibold mb-[10px] text-center sm:text-left text-[15vw] sm:text-[70pt] sm:w-[635px]"
                 >
                   FANATICAL ABOUT <em>CREATIVITY</em>
                 </h1>
@@ -201,7 +214,7 @@ function App() {
               <section id="yellow3" className="analysis analysis-Yellow">
                 <div
                   id="contentS2"
-                  className="cyan greyBdr-left cyan2 analysis analysis-Cyan"
+                  className="cyan cyan2 analysis analysis-Cyan"
                 >
                   {/*grid!*/}
                   <div id="place1" className="analysis analysis-Purple"></div>
@@ -210,7 +223,7 @@ function App() {
                     className="purple3 analysis analysis-Purple greyBdr-left d-flex flex-column align-items-start justify-content-center"
                   >
                     <i className="fa-sharp fa-solid fa-quote-left"></i>
-                    <p className="text-sm">
+                    <p className="text-sm max-w-[520px]">
                       With a keen eye for user experience, I continually refine
                       my product design skills while practicing my front-end
                       development abilities to create intuitive projects.
@@ -234,7 +247,7 @@ function App() {
                       </div>
                       <h2 className="projectTitleText">CREATIONS</h2>
                       <h2 className="projectTitleText text-[var(--gray)]">
-                        //////////////////
+                        ///////////////////
                       </h2>
                     </div>
                     <Carousel items={items} />
@@ -290,7 +303,7 @@ function App() {
                 id="skillSetArea"
                 className="d-flex flex-column text-xl flex-lg-row"
               >
-                <div className="myEvolvingSkillset p-[50px]">
+                <div className="myEvolvingSkillset p-[var(--standardMargin)]">
                   {/* Item */}
                   <div className="flex justify-between space-x-6 items-center pb-6">
                     <div className="flex items-center space-x-4">
@@ -298,7 +311,7 @@ function App() {
                         <span className="font-bold">Computer Science</span>
                       </div>
                     </div>
-                    <i className="fa-solid fa-network-wired text-3xl text-[#000000]"></i>
+                    <i className="fa-solid fa-network-wired text-3xl text-[var(--primaryColour)]"></i>
                   </div>
                   {/* Item */}
 
@@ -309,7 +322,7 @@ function App() {
                         <span className="font-bold">Mathematics</span>
                       </div>
                     </div>
-                    <i className="fa-solid fa-square-root-variable text-3xl text-[#000000]"></i>
+                    <i className="fa-solid fa-square-root-variable text-3xl text-[var(--primaryColour)]"></i>
                   </div>
                   {/* Item */}
 
@@ -320,12 +333,12 @@ function App() {
                         <span className="font-bold">Physics</span>
                       </div>
                     </div>
-                    <i className="fa-solid fa-atom text-3xl text-[#000000]"></i>
+                    <i className="fa-solid fa-atom text-3xl text-[var(--primaryColour)]"></i>
                   </div>
                   {/* Item */}
                   <i className="text-sm">(A-Levels)</i>
                 </div>
-                <div className="anotherQuote p-[50px]">
+                <div className="anotherQuote p-[var(--standardMargin)]">
                   <i className="fa-sharp fa-solid fa-quote-left"></i>
                   <p>
                     I excel in problem-solving and attention to detail, gained
@@ -353,18 +366,18 @@ function App() {
             </div>
             <summary
               id="details"
-              className="flex flex-wrap justify-between text-xl px-[50px] py-[15px] pb-[100px]"
+              className="flex flex-wrap justify-between text-xl px-[var(--standardMargin)] py-[15px] pb-[100px]"
             >
               <div className="contactElement flex flex-column justify-between">
-                <i className="fa-solid fa-phone text-[#000000]"></i>
+                <i className="fa-solid fa-phone text-[var(--primaryColour)]"></i>
                 <div id="phone">07342159087</div>
               </div>
               <div className="contactElement flex flex-column justify-between">
-                <i className="fa-solid fa-envelope text-[#000000]"></i>
+                <i className="fa-solid fa-envelope text-[var(--primaryColour)]"></i>
                 <div id="email">tcjgoulder@gmail.com</div>
               </div>
               <div className="contactElement flex flex-column justify-between">
-                <i className="fa-brands fa-linkedin text-[#000000]"></i>
+                <i className="fa-brands fa-linkedin text-[var(--primaryColour)]"></i>
                 <a
                   href="https://www.linkedin.com/in/tye-goulder-2b59b4256/"
                   target="_blank"

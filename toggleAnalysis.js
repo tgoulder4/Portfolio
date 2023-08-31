@@ -1,11 +1,16 @@
 //TOGGLE ANALYSIS-------------------------
-$(document).ready(function () {
+$(document).ready(function async() {
   // remove 'analysis-[color]... classes from elements'
   $(".analysis").each(function () {
     $(this).removeClass(
       "analysis-Red analysis-Green analysis-Yellow analysis-Cyan analysis-Purple"
     );
   });
+
+  setTimeout(function () {
+    $("#mainReveal").addClass("mainRevealAnim");
+    $(".cover").addClass("coverAnim");
+  }, 1000);
 });
 
 //I TRIED BREAKPOINTS AND CLASS ADDITIONS-------------------------

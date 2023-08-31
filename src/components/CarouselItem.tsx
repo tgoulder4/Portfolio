@@ -42,7 +42,7 @@ export function CarouselItem(Props: CarouselItemProps) {
             </a>
           </div>
           <a className="whitespace-nowrap py-2 px-4 text-black bg-white hover:bg-gray-100 border-2 border-gray-300">
-            Next project: {item.nextItemTitle}
+            Next: {item.nextItemTitle}
           </a>
         </div>
       </div>
