@@ -329,6 +329,7 @@
   --projectCardHeight: 375px;
   --standardMargin: 50px;
   --mobileStandardMargin: 20px;
+  --blockSize: 25px;
 }
 
 * {
@@ -520,7 +521,6 @@ html {
 #topPart {
   justify-content: space-between;
   left: 0;
-  animation: ssTopBlocksMoveDown cubic-bezier(0.075, 0.82, 0.165, 1) 10s infinite;
 }
 
 @keyframes ssGap {
@@ -562,13 +562,13 @@ html {
   }
   60% {
     /*State 3*/
-    left: calc(100% - var(--HorizBlockHeight));
+    left: calc(100% - var(--blockSize));
     height: 21.8%;
     top: 50%;
   }
   80% {
     /*State 4*/
-    left: calc(100% - var(--HorizBlockHeight));
+    left: calc(100% - var(--blockSize));
     top: 50%;
     height: 21.8%;
   }
@@ -581,15 +581,13 @@ html {
 .block {
   background-color: white;
   box-shadow: inset 0px 4px 2px 0px rgb(179, 179, 179);
-  position: absolute;
   top: 0;
 }
 
 #leftBlock,
 #rightBlock {
-  width: calc(50% - 1px);
-  height: 100%;
-  animation: ssGap cubic-bezier(0.075, 0.82, 0.165, 1) 10s infinite;
+  width: 100%;
+  height: var(--blockSize);
   /*animation: ssTop cubic-bezier(0.075, 0.82, 0.165, 1) 10s infinite;*/
 }
 
@@ -602,11 +600,10 @@ html {
 }
 
 #bottomBlock {
-  top: 70px;
-  left: calc(48% - 22.25px);
-  width: var(--HorizBlockHeight);
+  top: 40px;
+  left: calc(50% - 0.5 * var(--blockSize));
+  width: var(--blockSize);
   height: 100%;
-  animation: middleBlockShortens cubic-bezier(0.075, 0.82, 0.165, 1) 10s infinite;
 }
 
 @keyframes introduceWidth {

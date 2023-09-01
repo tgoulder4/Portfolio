@@ -8,12 +8,12 @@ const creations: Array<itemProps["item"]> = [
       "I created Trainspy, an API that provides real-time train information for the UK rail network. Reached over 800 downloads in less than 3 days.",
     company: "",
     companyInfo: "",
-    img: "https://media.discordapp.net/attachments/919288529379549195/1147009465602809886/8-GYOHiw1Rs3LgwOQ.png?width=426&height=426",
+    img: "https://media.discordapp.net/attachments/919288529379549195/1147018311335432323/icons8-train-100.png?width=712&height=702",
     url: "https://tgoulder4.github.io/projects/trainspy/",
   },
   {
     id: 2,
-    title: "LearnMate",
+    title: "Learnmate",
     roleDescription:
       "I created Learnmate, a prototype educational tool providing tailored content recommendations, practice questions, and time management tools. Used by many classmates.",
     company: "",
@@ -79,16 +79,19 @@ function App() {
                 {/*shapeshift group*/}
                 <div
                   id="shapeShift"
-                  className="h-100 relative min-w-[300px] z-10"
+                  className="h-100 relative min-w-[300px] z-10 flex gap-[5px] flex-col items-center"
                 >
                   <div
                     id="topPart"
-                    className="absolute flex h-1/5 w-full justify-between"
+                    className="flex w-[60%] gap-[1px] justify-between"
                   >
-                    <div className="block" id="leftBlock"></div>
-                    <div className="block" id="rightBlock"></div>
+                    <div className="block z-10" id="leftBlock"></div>
+                    <div className="block z-10" id="rightBlock"></div>
                   </div>
-                  <div className="block" id="bottomBlock"></div>
+                  <div
+                    className="block w-[7%] left-[calc(43%)]"
+                    id="bottomBlock"
+                  ></div>
                 </div>
               </div>
               <div className="centerAccordion mb-5per">
@@ -140,7 +143,7 @@ function App() {
                   ⚠
                 </span>
                 <span className="font-semibold mr-2 text-left flex-auto">
-                  This site is partially complete. Check back later!
+                  Partially complete - check back later!
                 </span>
                 <svg
                   className="fill-current opacity-75 h-4 w-4"
@@ -311,7 +314,7 @@ function App() {
             <div className="Lfiller absolute"></div>
           </div>
           <div className="fillerContainer">
-            <div className="Rfiller absolute h-[617px]"></div>
+            <div className="Rfiller absolute h-[617px] lg:h-[443px]"></div>
           </div>
           <section className="analysis analysis-Yellow" id="yellow4">
             <div id="aboutMeSection" className="analysis analysis-Cyan cyan3">
@@ -338,7 +341,7 @@ function App() {
                   {/* Item */}
 
                   {/* Item */}
-                  <div className="flex justify-between border-y-2 border-[#c8c8c8] space-x-6 items-center py-6">
+                  <div className="flex justify-between border-y-2 border-[var(--lighterGrey)] space-x-6 items-center py-6">
                     <div className="flex items-center space-x-4">
                       <div className="flex flex-col space-y-2">
                         <span className="font-bold">Mathematics</span>
