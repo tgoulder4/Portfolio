@@ -156,7 +156,7 @@ function App() {
         >
           <div
             id="lFiller1"
-            className="filler position-absolute hidden sm:block left-0 w-7vw md:w-[12.5vw] bg-[var(--primaryColour)] mt-100 goesToLeft h-[1370px]"
+            className="filler position-absolute hidden sm:block left-0 w-7vw md:w-[12.5vw] bg-[var(--primaryColour)] mt-100 goesToLeft h-[1307px]"
           ></div>
           {/* absolute, move this to the left and down, left 0*/}
           <section
