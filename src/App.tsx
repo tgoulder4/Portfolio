@@ -240,7 +240,7 @@ function App() {
                   <div id="place1" className="analysis analysis-Purple"></div>
                   <div
                     id="quoteArea"
-                    className="purple3 analysis analysis-Purple greyBdr-left d-flex flex-column align-items-start justify-content-center px-[50px] py-[70px]"
+                    className="purple3 analysis analysis-Purple greyBdr-left d-flex flex-column align-items-start justify-content-center px-[50px] pb-[70px] pt-[50px]"
                   >
                     <i className="fa-sharp fa-solid fa-quote-left text-3xl text-[var(--grey)]"></i>
                     <p className=" max-w-[520px]">
