@@ -6,8 +6,8 @@ const items: Array<itemProps["item"]> = [
     title: "Trainspy",
     roleDescription:
       "Created Trainspy, an API that provides real-time train information for the UK rail network. Reached over 800 downloads in less than 3 days.",
-    company: "comapnyn",
-    companyInfo: "company information",
+    company: "",
+    companyInfo: "",
     img: "",
     url: "https://tgoulder4.github.io/projects/trainspy/",
   },

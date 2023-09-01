@@ -563,14 +563,10 @@ nav {
           position: absolute;
           top: 87px;
           left: 34px;
-          width: 43vw;
-          height: 5.8vw;
+          width: 370px;
+          height: 47px;
           z-index: -1;
           background-color: var(--lighterGrey);
-          @include minw($BPxl) {
-            width: 33vw;
-            height: 4.2vw;
-          }
         }
       }
     }
@@ -678,13 +674,8 @@ nav {
         position: absolute;
         top: 87px;
         left: 34px;
-        width: 40vw;
-        height: 4.2vw;
-        @include maxw($BPmd) //NOT WORKING
- {
-          width: 53vw;
-          height: 6vw;
-        }
+        width: 453px;
+        height: 46px;
         z-index: -1;
         background-color: var(--lighterGrey);
       }
