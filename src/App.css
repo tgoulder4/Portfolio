@@ -349,15 +349,15 @@ html {
 }
 
 .coverAnim {
-  animation: introduceOpacity 2s cubic-bezier(0.2, 0.01, 0.29, 0.98) forwards;
+  animation: introduceOpacity 1.5s cubic-bezier(0.2, 0.01, 0.29, 0.98) forwards;
 }
 
 .mainRevealAnim {
-  animation: introduceWidth 2s cubic-bezier(0.2, 0.01, 0.29, 0.98) forwards;
+  animation: introduceWidth 1.5s cubic-bezier(0.2, 0.01, 0.29, 0.98) forwards;
 }
 
 .topCoverAnim {
-  animation: fadeToTransparent 2s cubic-bezier(0.2, 0.01, 0.29, 0.98) forwards;
+  animation: fadeToTransparent 1.5s cubic-bezier(0.2, 0.01, 0.29, 0.98) forwards;
 }
 
 #rails {

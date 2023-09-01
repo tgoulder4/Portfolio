@@ -9,7 +9,7 @@
   }
 }
 @mixin introAnimation($anim) {
-  animation: $anim 2s cubic-bezier(0.2, 0.01, 0.29, 0.98) forwards;
+  animation: $anim 1.5s cubic-bezier(0.2, 0.01, 0.29, 0.98) forwards;
 }
 @mixin lineShadow($rightshift, $bottomshift, $blur, $spread, $colour) {
   box-shadow: $rightshift $bottomshift $blur $spread $colour;

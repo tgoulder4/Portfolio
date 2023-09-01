@@ -11,12 +11,12 @@ $(document).ready(function async() {
     $("#mainReveal").addClass("mainRevealAnim");
     $(".cover").addClass("coverAnim");
     $(".topCover").addClass("topCoverAnim");
-  }, 1000);
-  setTimeout(function () {
-    $(".topCover").addClass("hidden");
     $("#navbar").removeClass("z-[3]");
     $("#navbar").addClass("z-[2]");
-  }, 1000);
+  }, 10);
+  setTimeout(function () {
+    $(".topCover").addClass("hidden");
+  }, 2000);
 });
 
 //I TRIED BREAKPOINTS AND CLASS ADDITIONS-------------------------

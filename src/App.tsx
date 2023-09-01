@@ -364,7 +364,7 @@ function App() {
                   <i className="text-sm">(A-Levels)</i>
                 </div>
                 <div className="anotherQuote p-[var(--standardMargin)]">
-                  <i className="fa-sharp fa-solid fa-quote-left"></i>
+                  <i className="fa-sharp fa-solid fa-quote-left text-3xl text-[var(--grey)]"></i>
                   <p>
                     I excel in problem-solving and attention to detail, gained
                     from my passion for maths, physics and computer science.
