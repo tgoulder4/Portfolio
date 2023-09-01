@@ -3,7 +3,7 @@ import { itemProps } from "./components/Carousel";
 const items: Array<itemProps["item"]> = [
   {
     id: 1,
-    title: "Trainspy (Creator)",
+    title: "Trainspy",
     roleDescription:
       "Created Trainspy, an API that provides real-time train information for the UK rail network. Reached over 800 downloads in less than 3 days.",
     company: "comapnyn",
@@ -13,7 +13,7 @@ const items: Array<itemProps["item"]> = [
   },
   {
     id: 2,
-    title: "LearnMate (Creator)",
+    title: "LearnMate",
     roleDescription:
       "Created Learnmate, a prototype educational tool that provides tailored content recommendations, practice questions, and time management tools, benefitting all learners regardless of their background or ability.",
     company: "",
@@ -124,7 +124,7 @@ function App() {
             </li>
             <li>
               <div
-                className="p-2 bg-orange-800 items-center text-orange-100 leading-none lg:rounded-full flex lg:inline-flex"
+                className="p-2 bg-orange-800 items-center text-orange-100 leading-none rounded-full flex inline-flex"
                 role="alert"
               >
                 <span className="flex rounded-full bg-orange-500 uppercase px-2 py-1 text-xs font-bold mr-3">
@@ -156,7 +156,7 @@ function App() {
         >
           <div
             id="lFiller1"
-            className="filler position-absolute hidden sm:block left-0 w-7vw md:w-[12.5vw] bg-[var(--primaryColour)] mt-100 goesToLeft h-[1270px]"
+            className="filler position-absolute hidden sm:block left-0 w-7vw md:w-[12.5vw] bg-[var(--primaryColour)] mt-100 goesToLeft h-[1370px]"
           ></div>
           {/* absolute, move this to the left and down, left 0*/}
           <section
@@ -197,18 +197,18 @@ function App() {
                 id="purple2"
                 className="analysis analysis-Purple sm:ml-[52px] sm:mb-[60px] sm:pt-[var(--CYANMARGINWIDTH)] pt-[var(--mobileStandardMargin)] meFanaticalAndDescription"
               >
-                <summary className="whoAndWhatIAm mb-[40px] d-none d-xl-flex justify-between">
-                  <h3>TYE GOULDER</h3>
-                  <h3>-</h3>
-                  <h3>SOFTWARE DEVELOPER</h3>
-                  <h3>|</h3>
-                  <h3>LOVES OVERWATCH</h3>
+                <summary className="whoAndWhatIAm text-[var(--primaryColour)] mb-[40px] d-none d-xl-flex justify-between">
+                  <p>TYE GOULDER</p>
+                  <p>-</p>
+                  <p>SOFTWARE DEVELOPER</p>
+                  <p>|</p>
+                  <p>LOVES OVERWATCH</p>
                 </summary>
                 <div className="highlighted relative"></div>
                 {/* a */}
                 <h1
                   id="fanaticalTitle"
-                  className="position-relative lineh-0p9 font-semibold mb-[10px] text-center sm:text-left text-[15vw] sm:text-[70pt] sm:w-[635px]"
+                  className="position-relative lineh-0p9 font-semibold mb-[10px] text-center sm:text-left text-[15vw] sm:text-[min(100pt,13vw)] md:text-[70pt] sm:w-[635px]"
                 >
                   FANATICAL ABOUT <em>CREATIVITY</em>
                 </h1>
@@ -240,10 +240,10 @@ function App() {
                   <div id="place1" className="analysis analysis-Purple"></div>
                   <div
                     id="quoteArea"
-                    className="purple3 analysis analysis-Purple greyBdr-left d-flex flex-column align-items-start justify-content-center"
+                    className="purple3 analysis analysis-Purple greyBdr-left d-flex flex-column align-items-start justify-content-center px-[50px] py-[100px]"
                   >
-                    <i className="fa-sharp fa-solid fa-quote-left"></i>
-                    <p className="text-sm max-w-[520px]">
+                    <i className="fa-sharp fa-solid fa-quote-left text-3xl text-[var(--grey)]"></i>
+                    <p className=" max-w-[520px]">
                       With a keen eye for user experience, I continually refine
                       my product design skills while practicing my front-end
                       development abilities to create intuitive projects.
@@ -387,11 +387,15 @@ function App() {
             >
               <div className="contactElement flex flex-column justify-between">
                 <i className="fa-solid fa-phone text-[var(--primaryColour)]"></i>
-                <div id="phone">07342159087</div>
+                <a href="tel:+447342159087" target="_blank">
+                  <div id="phone">07342159087</div>
+                </a>
               </div>
               <div className="contactElement flex flex-column justify-between">
                 <i className="fa-solid fa-envelope text-[var(--primaryColour)]"></i>
-                <div id="email">tcjgoulder@gmail.com</div>
+                <a href="mailto:tcjgoulder@gmail.com" target="_blank">
+                  <div id="email">tcjgoulder@gmail.com</div>
+                </a>
               </div>
               <div className="contactElement flex flex-column justify-between">
                 <i className="fa-brands fa-linkedin text-[var(--primaryColour)]"></i>

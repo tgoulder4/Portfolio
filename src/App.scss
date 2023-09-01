@@ -237,7 +237,6 @@
 .block {
   background-color: white;
   box-shadow: inset 0px 4px 2px 0px rgba(179, 179, 179, 1);
-  cursor: pointer;
   position: absolute;
   top: 0;
 }
@@ -440,11 +439,9 @@ nav {
       .purple3,
       #quoteArea {
         grid-area: summary;
-        padding: 50px;
         p {
           font-weight: 400;
-          font-size: 1.3rem;
-          font-style: italic;
+          color: var(--primaryColour);
         }
         border-right: 2px solid var(--grey);
         border-left: none;
@@ -485,11 +482,7 @@ nav {
             }
             summary {
               padding: 0.8rem;
-              h3,
               p {
-                font-size: 1.1rem;
-              }
-              h3 {
                 font-weight: 700;
                 margin-bottom: 2px;
               }

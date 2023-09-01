@@ -571,7 +571,6 @@ html {
 .block {
   background-color: white;
   box-shadow: inset 0px 4px 2px 0px rgb(179, 179, 179);
-  cursor: pointer;
   position: absolute;
   top: 0;
 }
@@ -769,15 +768,13 @@ nav ul li a {
 #red #yellow3 .cyan2 .purple3,
 #red #yellow3 .cyan2 #quoteArea {
   grid-area: summary;
-  padding: 50px;
   border-right: 2px solid var(--grey);
   border-left: none;
 }
 #red #yellow3 .cyan2 .purple3 p,
 #red #yellow3 .cyan2 #quoteArea p {
   font-weight: 400;
-  font-size: 1.3rem;
-  font-style: italic;
+  color: var(--primaryColour);
 }
 #red #yellow3 .cyan2 .purple4 {
   grid-area: projectArea;
@@ -815,11 +812,7 @@ nav ul li a {
 #red #yellow3 .cyan2 .purple4 .green3 .projectCard summary {
   padding: 0.8rem;
 }
-#red #yellow3 .cyan2 .purple4 .green3 .projectCard summary h3,
 #red #yellow3 .cyan2 .purple4 .green3 .projectCard summary p {
-  font-size: 1.1rem;
-}
-#red #yellow3 .cyan2 .purple4 .green3 .projectCard summary h3 {
   font-weight: 700;
   margin-bottom: 2px;
 }
