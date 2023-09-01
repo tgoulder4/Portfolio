@@ -303,7 +303,7 @@ function App() {
             <div className="Lfiller absolute"></div>
           </div>
           <div className="fillerContainer">
-            <div className="Rfiller absolute"></div>
+            <div className="Rfiller absolute h-[617px]"></div>
           </div>
           <section className="analysis analysis-Yellow" id="yellow4">
             <div id="aboutMeSection" className="analysis analysis-Cyan cyan3">

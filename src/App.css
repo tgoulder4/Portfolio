@@ -958,7 +958,6 @@ nav ul li a {
   right: 0;
   width: calc(12.5vw - var(--CYANMARGINWIDTH));
   background-color: var(--primaryColour);
-  height: 800px;
   z-index: -1;
 }
 #red .fillerContainer .Lfiller {
