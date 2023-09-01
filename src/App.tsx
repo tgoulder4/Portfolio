@@ -15,7 +15,7 @@ const items: Array<itemProps["item"]> = [
     id: 2,
     title: "LearnMate",
     roleDescription:
-      "Created Learnmate, a prototype educational tool that provides tailored content recommendations, practice questions, and time management tools, benefitting all learners regardless of their background or ability.",
+      "Created Learnmate, a prototype educational tool providing tailored content recommendations, practice questions, and time management tools. Used by many classmates.",
     company: "",
     companyInfo: "",
     img: "",
