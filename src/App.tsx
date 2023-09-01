@@ -316,11 +316,8 @@ function App() {
               >
                 <h2>ABOUT ME</h2>
               </div>
-              <div
-                id="skillSetArea"
-                className="d-flex flex-column text-xl flex-lg-row"
-              >
-                <div className="myEvolvingSkillset p-[var(--standardMargin)]">
+              <div id="skillSetArea" className="d-flex flex-column flex-lg-row">
+                <div className="myEvolvingSkillset text-xl p-[var(--standardMargin)]">
                   {/* Item */}
                   <div className="flex justify-between space-x-6 items-center pb-6">
                     <div className="flex items-center space-x-4">
