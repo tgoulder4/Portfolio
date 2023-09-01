@@ -1,66 +1,68 @@
-import { CarouselItem, CarouselItemProps } from "./CarouselItem";
+import { useState } from "react";
 interface Props {
-  items: Array<CarouselItemProps["item"]>;
+  items: Array<itemProps["item"]>;
 }
-
-function Carousel({ items }: Props) {
+export interface itemProps {
+  item: {
+    id: number;
+    title: string;
+    roleDescription: string;
+    company: string;
+    companyInfo: string;
+    img: string;
+    url: string;
+  };
+  key: number;
+}
+function MyCarousel({ items }: Props) {
+  const [index, setIndex] = useState(0);
+  const findNextIndex = (index: number) => {
+    if (index == items.length - 1) {
+      return 0;
+    } else {
+      return index + 1;
+    }
+  };
+  const handleSelect = (index: number) => {
+    setIndex(findNextIndex(index));
+  };
+  const currentItem: itemProps["item"] = items[index];
+  const nextItem: itemProps["item"] = items[findNextIndex(index)];
   return (
-    <>
-      {/* BOOTSTRAP CAROUSEL */}
-      <div
-        id="carouselExampleIndicators"
-        className="carousel slide w-full h-96 border-2 border-[var(--primaryColour)] bg-[#f8f8f8] drop-shadow-[0px_9px_5px_#c9c9c9] p-[50px]"
-        data-ride="carousel"
-      >
-        <ol className="carousel-indicators">
-          <li
-            data-target="#carouselExampleIndicators"
-            data-slide-to="0"
-            className="active"
-          ></li>
-          <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-          <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-        </ol>
-        <div className="carousel-inner h-100">
-          {items.map((item: CarouselItemProps["item"], index: number) => {
-            return (
-              <CarouselItem key={item.id} item={item} active={index == 0} />
-            );
-          })}{" "}
+    <div className="w-full h-96 border-2 border-[var(--primaryColour)] bg-[#f8f8f8] flex flex-col justify-between drop-shadow-[0px_9px_5px_#c9c9c9] p-[50px]">
+      <div className="flex">
+        {currentItem.img ? (
+          <img src={currentItem.img} alt={currentItem.company} />
+        ) : (
+          ""
+        )}
+        <div className="flex flex-col">
+          <h2 className="text-[30pt] font-bold">
+            {currentItem.title}{" "}
+            {currentItem.company ? "@" + currentItem.company : ""}
+          </h2>
+          <p className="italic">{currentItem.companyInfo}</p>
         </div>
+      </div>
+      <p>{currentItem.roleDescription}</p>
+      <div className="flex justify-between">
         <a
-          className="carousel-control-prev"
-          href="#carouselExampleIndicators"
-          role="button"
-          data-slide="prev"
+          href={currentItem.url}
+          target="_blank"
+          className="bg-[var(--primaryColour)] hover:bg-slate-800 border-gray-800 text-white px-4 py-2"
         >
-          <span
-            className="carousel-control-prev-icon"
-            aria-hidden="true"
-          ></span>
-          <span className="sr-only">Previous</span>
+          Take a look
         </a>
         <a
-          className="carousel-control-next"
-          href="#carouselExampleIndicators"
-          role="button"
-          data-slide="next"
+          onClick={() => handleSelect(index)}
+          href="javascript:void(0)"
+          className="whitespace-nowrap py-2 px-4 text-black bg-white hover:bg-gray-100 border-2 border-gray-300"
         >
-          <span
-            className="carousel-control-next-icon text-black"
-            aria-hidden="true"
-          ></span>
-          <span className="sr-only">Next</span>
+          Next: {nextItem.title}
         </a>
       </div>
-      {/* END OF BOOTSTRAP CAROUSEL */}
-      {/* <div className="w-full h-full border-2 border-[var(--primaryColour)] bg-[#f8f8f8]">
-        {items.map((item: CarouselItemProps["item"]) => {
-          return <CarouselItem key={item.id} item={item} />;
-        })}
-      </div> */}
-    </>
+    </div>
   );
 }
 
-export default Carousel;
+export default MyCarousel;

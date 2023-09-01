@@ -1,27 +1,25 @@
-import Carousel from "./components/Carousel";
-import { CarouselItemProps } from "./components/CarouselItem";
-const items: Array<CarouselItemProps["item"]> = [
+import MyCarousel from "./components/Carousel";
+import { itemProps } from "./components/Carousel";
+const items: Array<itemProps["item"]> = [
   {
     id: 1,
-    title: "Trainspy",
+    title: "Trainspy (Creator)",
     roleDescription:
       "Created Trainspy, an API that provides real-time train information for the UK rail network. Reached over 800 downloads in less than 3 days.",
-    company: "",
-    companyInfo: "",
+    company: "comapnyn",
+    companyInfo: "company information",
     img: "",
     url: "https://tgoulder4.github.io/projects/trainspy/",
-    nextItemTitle: "",
   },
   {
     id: 2,
-    title: "LearnMate",
+    title: "LearnMate (Creator)",
     roleDescription:
-      "Created LearnMate, an API that provides real-time train information for the UK rail network. Reached over 800 downloads in less than 3 days.",
+      "Created Learnmate, a prototype educational tool that provides tailored content recommendations, practice questions, and time management tools, benefitting all learners regardless of their background or ability.",
     company: "",
     companyInfo: "",
     img: "",
-    url: "",
-    nextItemTitle: "",
+    url: "https://tgoulder4.github.io/projects/Learnmate/",
   },
 ];
 
@@ -130,7 +128,7 @@ function App() {
                 role="alert"
               >
                 <span className="flex rounded-full bg-orange-500 uppercase px-2 py-1 text-xs font-bold mr-3">
-                  Warning
+                  ⚠
                 </span>
                 <span className="font-semibold mr-2 text-left flex-auto">
                   This site is partially complete. Check back later!
@@ -269,9 +267,9 @@ function App() {
                         ////////////////
                       </h2>
                     </div>
-                    <Carousel items={items} />
+                    <MyCarousel items={items} />
                   </div>
-                  <div className="githubWrapper greyBdr-left greyBdr-right greyBdr-bottom">
+                  <div className="githubWrapper  greyBdr-right">
                     <div className="analysis analysis-Purple shortHeightWrapper">
                       <a
                         href="https://github.com/tgoulder4"
