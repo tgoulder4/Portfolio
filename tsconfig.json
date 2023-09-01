@@ -20,6 +20,6 @@
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true
   },
-  "include": ["src", "toggleAnalysis.js"],
+  "include": ["src", "src/toggleAnalysis.js"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }

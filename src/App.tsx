@@ -134,7 +134,7 @@ function App() {
             <li>
               <a href="#contact">CONTACT</a>
             </li>
-            <li>
+            {/* <li>
               <div
                 className="p-2 bg-orange-800 items-center text-orange-100 leading-none rounded-full flex"
                 role="alert"
@@ -151,7 +151,7 @@ function App() {
                   viewBox="0 0 20 20"
                 ></svg>
               </div>
-            </li>
+            </li> */}
             <li className="moveLeft">
               <a href="#about">ABOUT</a>
             </li>
@@ -391,7 +391,7 @@ function App() {
             </div>
             <summary
               id="details"
-              className="flex flex-wrap justify-between text-xl px-[var(--standardMargin)] py-[15px] pb-[100px]"
+              className="flex flex-wrap justify-between px-[var(--standardMargin)] py-[var(--standardMargin)] pb-[100px]"
             >
               <div className="contactElement flex flex-column justify-between">
                 <i className="fa-solid fa-phone text-[var(--primaryColour)]"></i>

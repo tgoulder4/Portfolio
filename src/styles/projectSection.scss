@@ -1,5 +1,5 @@
-@import "../abstract/mixins.scss";
-@import "../abstract/variables.scss";
+@import "./abstract/mixins.scss";
+@import "./abstract/variables.scss";
 
 #projectCards {
   row-gap: $projectCardSeparation;
