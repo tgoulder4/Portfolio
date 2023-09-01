@@ -3,7 +3,9 @@ export default {
   content: [],
   theme: {
     extend: {},
+    screens: {
+      xl: "1200px",
+    },
   },
   plugins: [],
-}
-
+};

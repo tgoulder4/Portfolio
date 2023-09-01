@@ -124,7 +124,7 @@ function App() {
             </li>
             <li>
               <div
-                className="p-2 bg-orange-800 items-center text-orange-100 leading-none rounded-full flex inline-flex"
+                className="p-2 bg-orange-800 items-center text-orange-100 leading-none rounded-full flex"
                 role="alert"
               >
                 <span className="flex rounded-full bg-orange-500 uppercase px-2 py-1 text-xs font-bold mr-3">
@@ -195,7 +195,7 @@ function App() {
               {/*ml-40 is needed for non analysis alignment*/}
               <article
                 id="purple2"
-                className="analysis analysis-Purple sm:ml-[52px] sm:mb-[60px] sm:pt-[var(--CYANMARGINWIDTH)] pt-[var(--mobileStandardMargin)] meFanaticalAndDescription"
+                className="analysis analysis-Purple sm:ml-[52px] sm:mb-[60px] sm:pt-[var(--CYANMARGINWIDTH)] sm:pb-0 py-[calc(var(--mobileStandardMargin)_+_50px)] meFanaticalAndDescription"
               >
                 <summary className="whoAndWhatIAm text-[var(--primaryColour)] mb-[40px] d-none d-xl-flex justify-between">
                   <p>TYE GOULDER</p>
@@ -208,7 +208,7 @@ function App() {
                 {/* a */}
                 <h1
                   id="fanaticalTitle"
-                  className="position-relative lineh-0p9 font-semibold mb-[10px] text-center sm:text-left text-[15vw] sm:text-[min(100pt,13vw)] md:text-[70pt] sm:w-[635px]"
+                  className="position-relative lineh-0p9 font-semibold mb-[10px] text-center sm:text-left text-[15vw] xl:text-[70pt] sm:w-[635px]"
                 >
                   FANATICAL ABOUT <em>CREATIVITY</em>
                 </h1>
@@ -240,7 +240,7 @@ function App() {
                   <div id="place1" className="analysis analysis-Purple"></div>
                   <div
                     id="quoteArea"
-                    className="purple3 analysis analysis-Purple greyBdr-left d-flex flex-column align-items-start justify-content-center px-[50px] py-[100px]"
+                    className="purple3 analysis analysis-Purple greyBdr-left d-flex flex-column align-items-start justify-content-center px-[50px] py-[70px]"
                   >
                     <i className="fa-sharp fa-solid fa-quote-left text-3xl text-[var(--grey)]"></i>
                     <p className=" max-w-[520px]">

@@ -137,8 +137,14 @@
 
 #fanaticalTitle {
   line-height: 0.9;
-  @media (min-width: 640px) {
+  @media (min-width: $BPsm) {
     text-align: left !important;
+  }
+  @media (max-width: $BPxl) {
+    font-size: min(100pt, 13vw);
+  }
+  @media (min-width: $BPxl) {
+    font-size: 70pt;
   }
 }
 
