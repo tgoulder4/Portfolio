@@ -685,6 +685,14 @@ nav ul li a {
   font-style: italic;
 }
 
+img {
+  -webkit-user-drag: none;
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+}
+
 @media (max-width: 640px) {
   #red {
     border-left: none !important;

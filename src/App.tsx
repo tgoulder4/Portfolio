@@ -1,25 +1,34 @@
 import MyCarousel from "./components/Carousel";
 import { itemProps } from "./components/Carousel";
-const items: Array<itemProps["item"]> = [
+const creations: Array<itemProps["item"]> = [
   {
     id: 1,
     title: "Trainspy",
     roleDescription:
-      "Created Trainspy, an API that provides real-time train information for the UK rail network. Reached over 800 downloads in less than 3 days.",
+      "I created Trainspy, an API that provides real-time train information for the UK rail network. Reached over 800 downloads in less than 3 days.",
     company: "",
     companyInfo: "",
-    img: "",
+    img: "https://media.discordapp.net/attachments/919288529379549195/1147009465602809886/8-GYOHiw1Rs3LgwOQ.png?width=426&height=426",
     url: "https://tgoulder4.github.io/projects/trainspy/",
   },
   {
     id: 2,
     title: "LearnMate",
     roleDescription:
-      "Created Learnmate, a prototype educational tool providing tailored content recommendations, practice questions, and time management tools. Used by many classmates.",
+      "I created Learnmate, a prototype educational tool providing tailored content recommendations, practice questions, and time management tools. Used by many classmates.",
     company: "",
     companyInfo: "",
-    img: "",
+    img: "https://media.discordapp.net/attachments/919288529379549195/1147009465330192404/Group_336.png?width=702&height=702",
     url: "https://tgoulder4.github.io/projects/Learnmate/",
+  },
+  {
+    id: 2,
+    title: "Portfolio",
+    roleDescription: "I created this portfolio.",
+    company: "",
+    companyInfo: "",
+    img: "https://media.discordapp.net/attachments/919288529379549195/1147009465070125096/newLogo.png?width=661&height=661",
+    url: "#",
   },
 ];
 
@@ -267,15 +276,14 @@ function App() {
                         ////////////////
                       </h2>
                     </div>
-                    <MyCarousel items={items} />
+                    <MyCarousel creations={creations} />
                   </div>
                   <div className="githubWrapper  greyBdr-right">
-                    <div className="analysis analysis-Purple shortHeightWrapper">
+                    <div className="analysis analysis-Purple shortHeightWrapper d-flex justify-content-center">
                       <a
                         href="https://github.com/tgoulder4"
                         target="_blank"
                         id="purple5"
-                        className="d-flex justify-content-center pt-12vh"
                       >
                         <i className="fa-brands fa-github fa-3x"></i>
                       </a>
@@ -316,7 +324,7 @@ function App() {
               >
                 <h2>ABOUT ME</h2>
               </div>
-              <div id="skillSetArea" className="d-flex flex-column flex-lg-row">
+              <div id="skillSetArea" className="flex flex-col lg:flex-row">
                 <div className="myEvolvingSkillset text-xl p-[var(--standardMargin)]">
                   {/* Item */}
                   <div className="flex justify-between space-x-6 items-center pb-6">

@@ -344,7 +344,13 @@ nav {
 .italic {
   font-style: italic;
 }
-
+img {
+  -webkit-user-drag: none;
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+}
 #red {
   @include maxw(640px) {
     border-left: none !important;

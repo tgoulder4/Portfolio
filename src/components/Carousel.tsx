@@ -1,6 +1,6 @@
 import { useState } from "react";
 interface Props {
-  items: Array<itemProps["item"]>;
+  creations: Array<itemProps["item"]>;
 }
 export interface itemProps {
   item: {
@@ -14,10 +14,10 @@ export interface itemProps {
   };
   key: number;
 }
-function MyCarousel({ items }: Props) {
+function MyCarousel({ creations }: Props) {
   const [index, setIndex] = useState(0);
   const findNextIndex = (index: number) => {
-    if (index == items.length - 1) {
+    if (index == creations.length - 1) {
       return 0;
     } else {
       return index + 1;
@@ -26,13 +26,17 @@ function MyCarousel({ items }: Props) {
   const handleSelect = (index: number) => {
     setIndex(findNextIndex(index));
   };
-  const currentItem: itemProps["item"] = items[index];
-  const nextItem: itemProps["item"] = items[findNextIndex(index)];
+  const currentItem: itemProps["item"] = creations[index];
+  const nextItem: itemProps["item"] = creations[findNextIndex(index)];
   return (
     <div className="w-full h-96 border-2 border-[var(--primaryColour)] bg-[#f8f8f8] flex flex-col justify-between drop-shadow-[0px_9px_5px_#c9c9c9] p-[50px]">
-      <div className="flex">
+      <div className="flex gap-2">
         {currentItem.img ? (
-          <img src={currentItem.img} alt={currentItem.company} />
+          <img
+            className="max-w-[45px] max-h-[45px] rounded-lg"
+            src={currentItem.img}
+            alt={currentItem.company}
+          />
         ) : (
           ""
         )}
