@@ -256,9 +256,8 @@ function App() {
                   >
                     <i className="fa-sharp fa-solid fa-quote-left text-3xl text-[var(--grey)]"></i>
                     <p className=" max-w-[520px]">
-                      With a keen eye for user experience, I continually refine
-                      my product design skills while practicing my front-end
-                      development abilities to create intuitive projects.
+                      I develop intuitive projects with a strong focus on user
+                      experience.
                     </p>
                   </div>
                   <div
