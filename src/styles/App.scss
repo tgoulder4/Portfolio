@@ -1,8 +1,8 @@
-@import "./abstract/moreTWClasses.scss";
-@import "./abstract/colours.scss";
-@import "./abstract/mixins.scss";
-@import "./abstract/variables.scss";
-@import "./abstract/reset.scss";
+@import "./moreTWClasses.scss";
+@import "./colours.scss";
+@import "./mixins.scss";
+@import "./variables.scss";
+@import "./reset.scss";
 .coverAnim {
   @include introAnimation(introduceOpacity);
 }
