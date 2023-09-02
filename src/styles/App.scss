@@ -809,3 +809,21 @@ img {
 .h-800px {
   height: 800px;
 }
+@keyframes expandNavBar {
+  0% {
+    height: 0;
+  }
+
+  100% {
+    height: var(--navHeight);
+  }
+}
+@keyframes backNavBar {
+  0% {
+    height: var(--navHeight);
+  }
+
+  100% {
+    height: 0;
+  }
+}

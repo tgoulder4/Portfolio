@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import MyCarousel from "./components/Carousel";
 import { itemProps } from "./components/Carousel";
 const creations: Array<itemProps["item"]> = [
@@ -33,6 +34,33 @@ const creations: Array<itemProps["item"]> = [
 ];
 
 function App() {
+
+  useEffect((): (() => void) => {
+    const elem: HTMLElement = document.getElementById("navbar")!;
+
+    function onScroll(): void {
+      if (window.scrollY > 1050 && elem.style.position !== "fixed") {
+        elem.style.position = "fixed";
+        elem.style.animation = "expandNavBar 1s";
+      }
+
+      if (window.scrollY < 1050 && elem.style.position !== "absolute") {
+        elem.style.animation = "backNavBar 0.5s";
+
+        setTimeout((): void => {
+          elem.style.position = "absolute";
+          elem.style.animation = "";
+          elem.style.height = "var(--navHeight)"
+        }, 500);
+      }
+    }
+
+    onScroll();
+
+    window.addEventListener("scroll", onScroll);
+    return (): void => window.removeEventListener("scroll", onScroll);
+  }, []);
+
   return (
     <>
       <header>
@@ -128,7 +156,8 @@ function App() {
         </div>
         <nav
           id="navbar"
-          className="position-absolute z-[3] w-100 back-color-primary d-flex justify-content-center align-items-center"
+          className="z-[3] w-100 back-color-primary d-flex justify-content-center align-items-center"
+          style={{position: "absolute"}}
         >
           <ul className="w-100 d-flex justify-items-center items-center justify-content-between">
             <li>
