@@ -160,30 +160,30 @@ function App() {
       </header>
       <main
         id="green"
-        className="analysis analysis-Green d-flex justify-content-center position-relative"
+        className="analysis  d-flex justify-content-center position-relative"
       >
         <div
           id="red"
-          className="analysis analysis-Red d-flex greyBdr-left flex-column sm:w-3/4 w-full"
+          className="analysis  d-flex greyBdr-left flex-column sm:w-3/4 w-full"
         >
           <div
             id="lFiller1"
-            className="filler position-absolute hidden sm:block left-0 w-7vw md:w-[12.5vw] bg-[var(--primaryColour)] mt-100 goesToLeft h-[1307px]"
+            className="filler position-absolute hidden sm:block left-0 w-7vw md:w-[12.5vw] bg-[var(--primaryColour)] mt-100 goesToLeft h-[1357px]"
           ></div>
           {/* absolute, move this to the left and down, left 0*/}
           <section
             id="yellow1"
-            className="analysis analysis-Yellow flex-column pl-ForDesk-0ForMob d-flex align-items-stretch greyBdr-bottom"
+            className="analysis  flex-column pl-ForDesk-0ForMob d-flex align-items-stretch greyBdr-bottom"
           >
             {/*---*/}
             <div
               id="cyan"
-              className="cyan analysis analysis-Cyan d-flex flex-column-reverse flex-xl-row align-items-xl-end"
+              className="cyan analysis  d-flex flex-column-reverse flex-xl-row align-items-xl-end"
             >
               <div className="fullHeightLeftVertGreyLine h-100 position-relative"></div>
               {/*spans the whole height*/}
 
-              <div className="analysis analysis-Purple deskLeftBanner minw-150px h-full ml-[-2px] d-none d-xl-flex greyBdr-left greyBdr-right w-var-greyblw bg-[var(--lighterGrey)] justify-center">
+              <div className="analysis  deskLeftBanner minw-150px h-full ml-[-2px] d-none d-xl-flex greyBdr-left greyBdr-right w-var-greyblw bg-[var(--lighterGrey)] justify-center">
                 <div
                   id="greySocials"
                   className="greySocialsContainer flex flex-col justify-between pb-[var(--standardMargin)] mt-[var(--CYANMARGINWIDTH)]"
@@ -207,7 +207,7 @@ function App() {
               {/*ml-40 is needed for non analysis alignment*/}
               <article
                 id="purple2"
-                className="analysis analysis-Purple sm:ml-[52px] sm:mb-[60px] sm:pt-[var(--CYANMARGINWIDTH)] sm:pb-0 py-[calc(var(--mobileStandardMargin)_+_50px)] meFanaticalAndDescription"
+                className="analysis  sm:ml-[52px] sm:mb-[60px] sm:pt-[var(--CYANMARGINWIDTH)] sm:pb-0 py-[calc(var(--mobileStandardMargin)_+_50px)] meFanaticalAndDescription"
               >
                 <summary className="whoAndWhatIAm text-[var(--primaryColour)] mb-[40px] d-none d-xl-flex justify-between">
                   <p>TYE GOULDER</p>
@@ -220,7 +220,7 @@ function App() {
                 {/* a */}
                 <h1
                   id="fanaticalTitle"
-                  className="position-relative lineh-0p9 font-semibold mb-[10px] text-center sm:text-left text-[15vw] xl:text-[70pt] sm:w-[635px]"
+                  className="position-relative lineh-0p9 font-semibold mb-[10px] text-center sm:text-left text-[15vw] lg:text-[90pt] tracking-wide sm:w-[635px]"
                 >
                   FANATICAL ABOUT <em>CREATIVITY</em>
                 </h1>
@@ -235,7 +235,7 @@ function App() {
               className="divider thiccDivider position-absolute goesToRight"
             ></div>
             <div className="LowerContForLeftFiller position-relative">
-              <div id="yellow2" className="analysis analysis-Yellow">
+              <div id="yellow2" className="analysis ">
                 <div
                   id="lightGreyDown"
                   className="greybgFiller d-none d-xl-block position-absolute"
@@ -243,16 +243,13 @@ function App() {
               </div>
 
               {/*current*/}
-              <section id="yellow3" className="analysis analysis-Yellow">
-                <div
-                  id="contentS2"
-                  className="cyan cyan2 analysis analysis-Cyan"
-                >
+              <section id="yellow3" className="analysis ">
+                <div id="contentS2" className="cyan cyan2 analysis ">
                   {/*grid!*/}
-                  <div id="place1" className="analysis analysis-Purple"></div>
+                  <div id="place1" className="analysis "></div>
                   <div
                     id="quoteArea"
-                    className="purple3 analysis analysis-Purple greyBdr-left d-flex flex-column align-items-start justify-content-center px-[50px] pb-[70px] pt-[50px]"
+                    className="purple3 analysis  greyBdr-left d-flex flex-column align-items-start justify-content-center px-[50px] pb-[70px] pt-[50px]"
                   >
                     <i className="fa-sharp fa-solid fa-quote-left text-3xl text-[var(--grey)]"></i>
                     <p className=" max-w-[520px]">
@@ -260,17 +257,14 @@ function App() {
                       experience.
                     </p>
                   </div>
-                  <div
-                    id="place3"
-                    className="analysis analysis-Purple greyBdr-all"
-                  ></div>
+                  <div id="place3" className="analysis  greyBdr-all"></div>
                   <div
                     id="projectArea"
-                    className="purple4 analysis analysis-Purple p-10 d-flex flex-column greyBdr-top"
+                    className="purple4 analysis  p-10 d-flex flex-column greyBdr-top"
                   >
                     <div
                       id="ttleProjects"
-                      className="green2 analysis analysis-Red d-flex flex-column"
+                      className="green2 analysis  d-flex flex-column"
                     >
                       <div className="legend d-flex justify-content-between"></div>
                       <h2 className="projectTitleText">MY WORK</h2>
@@ -281,7 +275,7 @@ function App() {
                     <MyCarousel creations={creations} />
                   </div>
                   <div className="githubWrapper  greyBdr-right">
-                    <div className="analysis analysis-Purple shortHeightWrapper d-flex justify-content-center">
+                    <div className="analysis  shortHeightWrapper d-flex justify-content-center">
                       <a
                         href="https://github.com/tgoulder4"
                         target="_blank"
@@ -291,14 +285,8 @@ function App() {
                       </a>
                     </div>
                   </div>
-                  <div
-                    id="place4"
-                    className="analysis analysis-Purple greyBdr-bottom"
-                  ></div>
-                  <div
-                    id="place3"
-                    className="analysis analysis-Purple greyBdr-all"
-                  ></div>
+                  <div id="place4" className="analysis  greyBdr-bottom"></div>
+                  <div id="place3" className="analysis  greyBdr-all"></div>
                 </div>
               </section>
             </div>
@@ -315,8 +303,8 @@ function App() {
           <div className="fillerContainer">
             <div className="Rfiller absolute h-[617px] lg:h-[443px]"></div>
           </div>
-          <section className="analysis analysis-Yellow" id="yellow4">
-            <div id="aboutMeSection" className="analysis analysis-Cyan cyan3">
+          <section className="analysis " id="yellow4">
+            <div id="aboutMeSection" className="analysis  cyan3">
               <div id="bl1" className="greyBdr-right"></div>
               <div id="bl2" className="greyBdr-top"></div>
               <div id="bl3" className="greyBdr-left greyBdr-right"></div>
@@ -375,10 +363,7 @@ function App() {
           <div className="dividerContainer">
             <div className="Divider position-absolute goesToRight goesToLeft w-100"></div>
           </div>
-          <section
-            className="analysis analysis-Yellow yellow5 grid"
-            id="contactMeSection"
-          >
+          <section className="analysis  yellow5 grid" id="contactMeSection">
             <div id="bl1" className="greyBdr-right"></div>
             <div id="bl2" className="greyBdr-left greyBdr-right"></div>
             <div id="bl3" className="greyBdr-right"></div>
