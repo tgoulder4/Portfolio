@@ -1,17 +1,9 @@
-//TOGGLE ANALYSIS-------------------------
-$(document).ready(function async() {
-  // remove 'analysis-[color]... classes from elements'
-  $(".analysis").each(function () {
-    $(this).removeClass(
-      "analysis-Red analysis-Green analysis-Yellow analysis-Cyan analysis-Purple"
-    );
-  });
-
+$(window).ready(function async() {
   setTimeout(function () {
     $("#mainReveal").addClass("mainRevealAnim");
     $(".cover").addClass("coverAnim");
     $(".topCover").addClass("topCoverAnim");
-  }, 1000);
+  }, 70);
   setTimeout(function () {
     $(".topCover").addClass("hidden");
     $("#navbar").removeClass("z-[3]");

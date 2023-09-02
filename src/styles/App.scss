@@ -143,9 +143,6 @@
   @media (max-width: $BPxl) {
     font-size: min(100pt, 13vw);
   }
-  @media (min-width: $BPxl) {
-    font-size: 70pt;
-  }
 }
 
 #projectCards {
@@ -376,7 +373,7 @@ img {
             width: 530px;
             height: 69px;
             z-index: -1;
-            @include maxw($BPmd) {
+            @include maxw($BPlg) {
               display: none;
             }
             background-color: var(--lighterGrey);
