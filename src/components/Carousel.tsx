@@ -49,7 +49,7 @@ function MyCarousel({ creations }: Props) {
         </div>
       </div>
       <p>{currentItem.roleDescription}</p>
-      <div className="flex justify-between">
+      <div className="flex flex-col sm:flex-row justify-between gap-2">
         <a
           onClick={() => handleSelect(index)}
           href="javascript:void(0)"

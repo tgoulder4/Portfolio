@@ -368,13 +368,19 @@ img {
           ::after {
             content: "";
             position: absolute;
-            top: 8px;
+            top: 12px;
             left: -18px;
-            width: 530px;
-            height: 69px;
+            width: 764px;
+            height: 94px;
             z-index: -1;
             @include maxw($BPlg) {
               display: none;
+            }
+            @include minw($BPxl) {
+              top: 11px;
+              left: -18px;
+              width: 700px;
+              height: 86px;
             }
             background-color: var(--lighterGrey);
           }
@@ -456,7 +462,8 @@ img {
       }
       .purple4 {
         grid-area: projectArea;
-        padding: 50px;
+        padding-top: 50px;
+        padding-bottom: 50px;
         gap: 30px;
 
         border-right: 2px solid var(--grey);
@@ -557,18 +564,21 @@ img {
     }
     #titleArea {
       grid-area: aboutMe;
-      padding-top: 80px;
-      padding-left: 50px;
+      padding-top: calc(var(--standardMargin) + 20px);
+      padding-bottom: 30px;
       h2 {
         &::after {
           content: "";
           position: absolute;
-          top: 87px;
+          top: 75px;
           left: 34px;
           width: 370px;
-          height: 47px;
+          height: 50px;
           z-index: -1;
           background-color: var(--lighterGrey);
+          @include maxw($BPsm) {
+            display: none;
+          }
         }
       }
     }
@@ -668,17 +678,20 @@ img {
     }
     #titleArea {
       grid-area: contactMe;
-      padding-top: 80px;
-      padding-left: 50px;
+      padding-top: calc(var(--standardMargin) + 20px);
+      padding-bottom: 30px;
       &::after {
         content: "";
         position: absolute;
-        top: 87px;
+        top: 75px;
         left: 34px;
-        width: 453px;
-        height: 46px;
+        width: 455px;
+        height: 49px;
         z-index: -1;
         background-color: var(--lighterGrey);
+        @include maxw($BPsm) {
+          display: none;
+        }
       }
     }
     .contactElement {

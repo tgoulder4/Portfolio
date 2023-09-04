@@ -249,7 +249,7 @@ function App() {
                   <div id="place1" className="analysis "></div>
                   <div
                     id="quoteArea"
-                    className="purple3 analysis  greyBdr-left d-flex flex-column align-items-start justify-content-center px-[50px] pb-[70px] pt-[50px]"
+                    className="purple3 analysis  greyBdr-left d-flex flex-column align-items-start justify-content-center px-[var(--mobileStandardMargin)] sm:px-[var(--standardMargin)] pb-[70px] pt-[50px]"
                   >
                     <i className="fa-sharp fa-solid fa-quote-left text-3xl text-[var(--grey)]"></i>
                     <p className=" max-w-[520px]">
@@ -260,7 +260,7 @@ function App() {
                   <div id="place3" className="analysis  greyBdr-all"></div>
                   <div
                     id="projectArea"
-                    className="purple4 analysis  p-10 d-flex flex-column greyBdr-top"
+                    className="purple4 analysis px-[var(--mobileStandardMargin)] sm:px-[var(--standardMargin)] d-flex flex-column greyBdr-top"
                   >
                     <div
                       id="ttleProjects"
@@ -310,7 +310,7 @@ function App() {
               <div id="bl3" className="greyBdr-left greyBdr-right"></div>
               <div
                 id="titleArea"
-                className="d-flex pb-[30px] position-relative greyBdr-bottom"
+                className="d-flex px-[var(--mobileStandardMargin)] sm:px-[var(--standardMargin)] position-relative greyBdr-bottom"
               >
                 <h2>ABOUT ME</h2>
               </div>
@@ -369,13 +369,13 @@ function App() {
             <div id="bl3" className="greyBdr-right"></div>
             <div
               id="titleArea"
-              className="d-flex pb-[30px] position-relative greyBdr-bottom"
+              className="flex px-[var(--mobileStandardMargin)] sm:px-[var(--standardMargin)] pb-[30px] position-relative greyBdr-bottom"
             >
               <h2>CONTACT ME</h2>
             </div>
             <summary
               id="details"
-              className="flex flex-wrap justify-between px-[var(--standardMargin)] py-[var(--standardMargin)] pb-[100px]"
+              className="flex flex-wrap gap-2 justify-between px-[var(--mobileStandardMargin)] sm:px-var[(--standardMargin)] py-[var(--standardMargin)] pb-[100px]"
             >
               <div className="contactElement flex flex-column justify-between">
                 <i className="fa-solid fa-phone text-[var(--primaryColour)]"></i>
