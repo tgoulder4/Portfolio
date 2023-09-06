@@ -29,11 +29,11 @@ function MyCarousel({ creations }: Props) {
   const currentItem: itemProps["item"] = creations[index];
   const nextItem: itemProps["item"] = creations[findNextIndex(index)];
   return (
-    <div className="w-full h-96 border-2 border-[var(--primaryColour)] bg-[#f8f8f8] flex flex-col justify-between drop-shadow-[0px_9px_5px_#c9c9c9] p-[50px]">
+    <div className="w-full h-96 border-2 border-[var(--primaryColour)] bg-[#f8f8f8] flex flex-col gap-2 sm:gap-0 justify-between drop-shadow-[0px_9px_5px_#c9c9c9] p-[50px]">
       <div className="flex gap-2">
         {currentItem.img ? (
           <img
-            className="max-w-[45px] max-h-[45px] rounded-lg"
+            className="w-[45px] h-[45px] rounded-lg"
             src={currentItem.img}
             alt={currentItem.company}
           />

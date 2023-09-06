@@ -8,7 +8,7 @@ const creations: Array<itemProps["item"]> = [
       "I created Trainspy, an API that provides real-time train information for the UK rail network. Reached over 800 downloads in less than 3 days.",
     company: "",
     companyInfo: "",
-    img: "https://media.discordapp.net/attachments/919288529379549195/1147018311335432323/icons8-train-100.png?width=712&height=702",
+    img: "./train.png",
     url: "https://tgoulder4.github.io/projects/trainspy/",
   },
   {
@@ -18,7 +18,7 @@ const creations: Array<itemProps["item"]> = [
       "I created Learnmate, a prototype educational tool providing tailored content recommendations, practice questions, and time management tools. Used by many classmates.",
     company: "",
     companyInfo: "",
-    img: "https://media.discordapp.net/attachments/919288529379549195/1147009465330192404/Group_336.png?width=702&height=702",
+    img: "./learnmateLogo.png",
     url: "https://tgoulder4.github.io/projects/Learnmate/",
   },
   {
@@ -27,7 +27,7 @@ const creations: Array<itemProps["item"]> = [
     roleDescription: "I created this portfolio.",
     company: "",
     companyInfo: "",
-    img: "https://media.discordapp.net/attachments/919288529379549195/1147009465070125096/newLogo.png?width=661&height=661",
+    img: "./logo.png",
     url: "#",
   },
 ];
@@ -44,13 +44,16 @@ function App() {
           <div id="mainReveal">
             {/*width goes from zero to vw upon animation*/}
             <div className="accordion partHeight" id="accordionLeft">
-              <div className="lgAccCont partHeight" id="lgAccCont">
+              <div
+                className="lgAccCont partHeight hidden lg:flex"
+                id="lgAccCont"
+              >
                 <div className="line hLine"></div>
                 <div className="line hLine"></div>
                 <div className="line hLine"></div>
               </div>
               {/*Holds the 3 lines for the larger column on the left/right*/}
-              <div className="vLine line tallVLine d-none d-sm-flex"></div>
+              <div className="vLine line tallVLine hidden lg:flex"></div>
               {/*color: difference*/}
               <div className="smAccCont d-flex">
                 <div className="line hLine"></div>
@@ -79,7 +82,7 @@ function App() {
                 {/*shapeshift group*/}
                 <div
                   id="shapeShift"
-                  className="h-100 relative min-w-[300px] z-10 flex gap-[5px] flex-col items-center"
+                  className="h-100 relative min-w-[200px] z-10 flex gap-[5px] flex-col items-center"
                 >
                   <div
                     id="topPart"
@@ -111,10 +114,13 @@ function App() {
                 <div className="line hLine"></div>
                 <div className="line hLine"></div>
               </div>
-              <div className="vLine line tallVLine d-none d-sm-flex"></div>
+              <div className="vLine line tallVLine hidden lg:flex"></div>
               {/*color: difference*/}
 
-              <div className="lgAccCont partHeight" id="lgAccCont2">
+              <div
+                className="lgAccCont partHeight hidden lg:flex"
+                id="lgAccCont2"
+              >
                 <div className="line hLine"></div>
                 <div className="line hLine"></div>
                 <div className="line hLine"></div>
@@ -251,7 +257,7 @@ function App() {
                     id="quoteArea"
                     className="purple3 analysis  greyBdr-left d-flex flex-column align-items-start justify-content-center px-[var(--mobileStandardMargin)] sm:px-[var(--standardMargin)] pb-[70px] pt-[50px]"
                   >
-                    <i className="fa-sharp fa-solid fa-quote-left text-3xl text-[var(--grey)]"></i>
+                    <i className="fa-sharp fa-solid fa-quote-left text-2xl text-[var(--grey)]"></i>
                     <p className=" max-w-[520px]">
                       I develop intuitive projects with a strong focus on user
                       experience.
@@ -323,7 +329,7 @@ function App() {
                         <span className="font-bold">Computer Science</span>
                       </div>
                     </div>
-                    <i className="fa-solid fa-network-wired text-3xl text-[var(--primaryColour)]"></i>
+                    <i className="fa-solid fa-network-wired text-2xl text-[var(--primaryColour)]"></i>
                   </div>
                   {/* Item */}
 
@@ -334,7 +340,7 @@ function App() {
                         <span className="font-bold">Mathematics</span>
                       </div>
                     </div>
-                    <i className="fa-solid fa-square-root-variable text-3xl text-[var(--primaryColour)]"></i>
+                    <i className="fa-solid fa-square-root-variable text-2xl text-[var(--primaryColour)]"></i>
                   </div>
                   {/* Item */}
 
@@ -345,13 +351,13 @@ function App() {
                         <span className="font-bold">Physics</span>
                       </div>
                     </div>
-                    <i className="fa-solid fa-atom text-3xl text-[var(--primaryColour)]"></i>
+                    <i className="fa-solid fa-atom text-2xl text-[var(--primaryColour)]"></i>
                   </div>
                   {/* Item */}
                   <i className="text-sm">(A-Levels)</i>
                 </div>
                 <div className="anotherQuote p-[var(--standardMargin)]">
-                  <i className="fa-sharp fa-solid fa-quote-left text-3xl text-[var(--grey)]"></i>
+                  <i className="fa-sharp fa-solid fa-quote-left text-2xl text-[var(--grey)]"></i>
                   <p>
                     I excel in problem-solving and attention to detail, gained
                     from my passion for maths, physics and computer science.
