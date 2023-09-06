@@ -138,7 +138,7 @@ function App() {
         >
           <ul className="w-100 d-flex justify-items-center items-center justify-content-between">
             <li>
-              <a href="#contact">CONTACT</a>
+              <a href="#contactMeSection">CONTACT</a>
             </li>
             {/* <li>
               <div
@@ -159,7 +159,7 @@ function App() {
               </div>
             </li> */}
             <li className="moveLeft">
-              <a href="#about">ABOUT</a>
+              <a href="#aboutMeSection">ABOUT</a>
             </li>
           </ul>
         </nav>
