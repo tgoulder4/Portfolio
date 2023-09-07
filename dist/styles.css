@@ -357,7 +357,11 @@ html {
 }
 
 .topCoverAnim {
-  animation: fadeToTransparent 1.5s cubic-bezier(0.2, 0.01, 0.29, 0.98) forwards;
+  animation: fadeToTransparent 1.1s cubic-bezier(0.2, 0.01, 0.29, 0.98) forwards;
+}
+
+.tallVLine {
+  animation: fadeFromTransparent 1s linear forwards;
 }
 
 #rails {
@@ -617,6 +621,14 @@ html {
   }
   to {
     opacity: 0;
+  }
+}
+@keyframes fadeFromTransparent {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
   }
 }
 .greyBdr-left {

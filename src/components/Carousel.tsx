@@ -45,7 +45,7 @@ function MyCarousel({ creations }: Props) {
             {currentItem.title}{" "}
             {currentItem.company ? "@" + currentItem.company : ""}
           </h2>
-          <p className="italic">{currentItem.companyInfo}</p>
+          <p className="italic text-gray-600">{currentItem.companyInfo}</p>
         </div>
       </div>
       <p>{currentItem.roleDescription}</p>

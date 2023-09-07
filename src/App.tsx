@@ -1,3 +1,4 @@
+import Logo from "@tyeg4/components";
 import MyCarousel from "./components/Carousel";
 import { itemProps } from "./components/Carousel";
 const creations: Array<itemProps["item"]> = [
@@ -84,17 +85,7 @@ function App() {
                   id="shapeShift"
                   className="h-100 relative min-w-[200px] z-10 flex gap-[5px] flex-col items-center"
                 >
-                  <div
-                    id="topPart"
-                    className="flex w-[60%] gap-[1px] justify-between"
-                  >
-                    <div className="block z-10" id="leftBlock"></div>
-                    <div className="block z-10" id="rightBlock"></div>
-                  </div>
-                  <div
-                    className="block w-[7%] left-[calc(43%)]"
-                    id="bottomBlock"
-                  ></div>
+                  <Logo />
                 </div>
               </div>
               <div className="centerAccordion mb-5per">
@@ -356,12 +347,14 @@ function App() {
                   {/* Item */}
                   <i className="text-sm">(A-Levels)</i>
                 </div>
-                <div className="anotherQuote p-[var(--standardMargin)]">
-                  <i className="fa-sharp fa-solid fa-quote-left text-2xl text-[var(--grey)]"></i>
-                  <p>
-                    I excel in problem-solving and attention to detail, gained
-                    from my passion for maths, physics and computer science.
-                  </p>
+                <div className="anotherQuote p-[var(--standardMargin)] flex flex-col gap-[var(--mobileStandardMargin)] sm:gap-[var(--standardMargin)]">
+                  <div className="flex flex-col">
+                    <i className="fa-sharp fa-solid fa-quote-left text-2xl text-[var(--grey)]"></i>
+                    <p>
+                      I excel in problem-solving and attention to detail, gained
+                      from my passion for maths, physics and computer science.
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
