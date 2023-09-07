@@ -29,7 +29,7 @@ const creations: Array<itemProps["item"]> = [
     company: "",
     companyInfo: "",
     img: "./logo.png",
-    url: "#",
+    url: "/",
   },
 ];
 
@@ -348,6 +348,7 @@ function App() {
                   <i className="text-sm">(A-Levels)</i>
                 </div>
                 <div className="anotherQuote p-[var(--standardMargin)] flex flex-col gap-[var(--mobileStandardMargin)] sm:gap-[var(--standardMargin)]">
+                  <img src="./me.jpg" alt="Tye Goulder" />
                   <div className="flex flex-col">
                     <i className="fa-sharp fa-solid fa-quote-left text-2xl text-[var(--grey)]"></i>
                     <p>
