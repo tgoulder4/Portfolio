@@ -9,6 +9,7 @@ export interface itemProps {
     roleDescription: string;
     company: string;
     companyInfo: string;
+    companyURL: string;
     img: string;
     url: string;
   };
@@ -29,7 +30,7 @@ function MyCarousel({ creations }: Props) {
   const currentItem: itemProps["item"] = creations[index];
   const nextItem: itemProps["item"] = creations[findNextIndex(index)];
   return (
-    <div className="w-full h-96 border-2 border-[var(--primaryColour)] bg-[#f8f8f8] flex flex-col gap-2 sm:gap-0 justify-between drop-shadow-[0px_9px_5px_#c9c9c9] p-[50px]">
+    <div className="w-full md:h-96 border-2 border-[var(--primaryColour)] bg-[#f8f8f8] flex flex-col gap-2 sm:gap-0 justify-between drop-shadow-[0px_9px_5px_#c9c9c9] p-[50px]">
       <div className="flex gap-2">
         {currentItem.img ? (
           <img
@@ -43,9 +44,9 @@ function MyCarousel({ creations }: Props) {
         <div className="flex flex-col">
           <h2 className="text-[30pt] font-bold">
             {currentItem.title}{" "}
-            {currentItem.company ? "@" + currentItem.company : ""}
+            
           </h2>
-          <p className="italic text-gray-600">{currentItem.companyInfo}</p>
+          <p className="italic text-gray-600"><a href={currentItem.companyURL} target="_blank">{currentItem.company ? "@" + currentItem.company +" - "+ currentItem.companyInfo:""}</a></p>
         </div>
       </div>
       <p>{currentItem.roleDescription}</p>

@@ -4,30 +4,44 @@ import { itemProps } from "./components/Carousel";
 const creations: Array<itemProps["item"]> = [
   {
     id: 1,
+    title: "Product Designer",
+    roleDescription:
+      "I am re-designing and developing a website for a youth-led mental health charity. We are conducting usability tests to ensure the website is designed to be accessible and easy to use for all visitors.", //The website was designed to be accessible and easy to use for all users.
+    company: "ALBOS UK",
+    companyURL:"https://albos.org.uk/",
+    companyInfo: "A youth-led mental health charity",
+    img: "./logo_light_short.png",
+    url: "/",
+  },
+  {
+    id: 2,
     title: "Trainspy",
     roleDescription:
       "I created Trainspy, an API that provides real-time train information for the UK rail network. Reached over 800 downloads in less than 3 days.",
     company: "",
     companyInfo: "",
+    companyURL: "",
     img: "./train.png",
     url: "https://tgoulder4.github.io/projects/trainspy/",
   },
   {
-    id: 2,
+    id: 4,
     title: "Learnmate",
     roleDescription:
       "I created Learnmate, a prototype educational tool providing tailored content recommendations, practice questions, and time management tools. Used by many classmates.",
     company: "",
     companyInfo: "",
+    companyURL: "",
     img: "./learnmateLogo.png",
     url: "https://tgoulder4.github.io/projects/Learnmate/",
   },
   {
-    id: 2,
+    id: 3,
     title: "Portfolio",
     roleDescription: "I created this portfolio.",
     company: "",
     companyInfo: "",
+    companyURL: "",
     img: "./logo.png",
     url: "/",
   },
@@ -165,7 +179,7 @@ function App() {
         >
           <div
             id="lFiller1"
-            className="filler position-absolute hidden sm:block left-0 w-7vw md:w-[12.5vw] bg-[var(--primaryColour)] mt-100 goesToLeft h-[1357px]"
+            className="filler position-absolute hidden sm:block left-0 w-7vw md:w-[12.5vw] bg-[var(--primaryColour)] mt-100 goesToLeft h-[1506px]"
           ></div>
           {/* absolute, move this to the left and down, left 0*/}
           <section
@@ -246,13 +260,27 @@ function App() {
                   <div id="place1" className="analysis "></div>
                   <div
                     id="quoteArea"
-                    className="purple3 analysis  greyBdr-left d-flex flex-column align-items-start justify-content-center px-[var(--mobileStandardMargin)] sm:px-[var(--standardMargin)] pb-[70px] pt-[50px]"
+                    className="purple3 analysis flex flex-col md:flex-row gap-12 justify-between greyBdr-left  px-[var(--mobileStandardMargin)] sm:px-[var(--standardMargin)] pb-[70px] pt-[50px]"
                   >
-                    <i className="fa-sharp fa-solid fa-quote-left text-2xl text-[var(--grey)]"></i>
-                    <p className=" max-w-[520px]">
-                      I develop intuitive projects with a strong focus on user
-                      experience.
-                    </p>
+                    <div className="flex flex-col items-start justify-center gap-2">
+                      <i className="fa-sharp fa-solid fa-quote-left text-2xl text-[var(--grey)]"></i>
+                      <p className=" max-w-[520px]">
+                        I develop intuitive projects with a strong focus on user
+                        experience! I enjoy exploring possible solutions to a
+                        problem, and I am always looking to learn new skills (to
+                        compensate for my terrible overwatch gameplay!). 
+                      </p>
+                      <p className=" max-w-[520px]">
+                      Aside from coding and designing, I enjoy bike rides and
+                        exploring new places. I am currently setting up a coding
+                        society which I look forward to running in the future!
+                      </p>
+                    </div>
+                    <img
+                      src="./me.jpg"
+                      className="h-[200px] object-scale-down"
+                      alt="Tye Goulder"
+                    />
                   </div>
                   <div id="place3" className="analysis  greyBdr-all"></div>
                   <div
@@ -348,7 +376,6 @@ function App() {
                   <i className="text-sm">(A-Levels)</i>
                 </div>
                 <div className="anotherQuote p-[var(--standardMargin)] flex flex-col gap-[var(--mobileStandardMargin)] sm:gap-[var(--standardMargin)]">
-                  <img src="./me.jpg" alt="Tye Goulder" />
                   <div className="flex flex-col">
                     <i className="fa-sharp fa-solid fa-quote-left text-2xl text-[var(--grey)]"></i>
                     <p>

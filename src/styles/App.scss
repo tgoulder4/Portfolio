@@ -672,6 +672,10 @@ img {
         " personalDetails ";
       grid-template-columns: auto;
       grid-template-rows: auto auto;
+      #bl1, #bl2, #bl3 {
+        display: none;
+      }
+      border-right: 2px solid var(--grey);
     }
     @media (min-width: $BPxl) {
       grid-template-areas:

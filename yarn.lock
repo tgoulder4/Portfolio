@@ -197,9 +197,10 @@
   resolved "https://registry.npmjs.org/@swc/types/-/types-0.1.4.tgz"
   integrity sha512-z/G02d+59gyyUb7KYhKi9jOhicek6QD2oMaotUyG+lUkybpXoV49dY9bj7Ah5Q+y7knK2jU67UTX9FyfGzaxQg==
 
-"@tyeg4/components@file:../../../components":
-  version "0.1.4"
-  resolved "file:../../../components"
+"@tyeg4/components@^0.1.5":
+  version "0.1.5"
+  resolved "https://registry.npmjs.org/@tyeg4/components/-/components-0.1.5.tgz"
+  integrity sha512-MosdbZeM85+fxnAo0Q0aWefVF4uMex8CiDlhGuF/WrWuqAGi8BDz6kgLgGZVFj865ew03sCVQUJIkhqQWWEWYg==
   dependencies:
     react "^18.2.0"
     react-dom "^18.2.0"
