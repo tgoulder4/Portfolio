@@ -8,10 +8,10 @@ const creations: Array<itemProps["item"]> = [
     roleDescription:
       "I am re-designing and developing a website for a youth-led mental health charity. We are conducting usability tests to ensure the website is designed to be accessible and easy to use for all visitors.", //The website was designed to be accessible and easy to use for all users.
     company: "ALBOS UK",
-    companyURL:"https://albos.org.uk/",
+    companyURL: "https://albos.org.uk/",
     companyInfo: "A youth-led mental health charity",
     img: "./logo_light_short.png",
-    url: "/",
+    url: "#",
   },
   {
     id: 2,
@@ -43,7 +43,7 @@ const creations: Array<itemProps["item"]> = [
     companyInfo: "",
     companyURL: "",
     img: "./logo.png",
-    url: "/",
+    url: "#",
   },
 ];
 
@@ -221,7 +221,7 @@ function App() {
                 className="analysis  sm:ml-[52px] sm:mb-[60px] sm:pt-[var(--CYANMARGINWIDTH)] sm:pb-0 py-[calc(var(--mobileStandardMargin)_+_50px)] meFanaticalAndDescription"
               >
                 <summary className="whoAndWhatIAm text-[var(--primaryColour)] mb-[40px] d-none d-xl-flex justify-between">
-                  <p>TYE GOULDER</p>
+                  <p>TYE</p>
                   <p>-</p>
                   <p>SOFTWARE DEVELOPER</p>
                   <p>|</p>
@@ -268,10 +268,10 @@ function App() {
                         I develop intuitive projects with a strong focus on user
                         experience! I enjoy exploring possible solutions to a
                         problem, and I am always looking to learn new skills (to
-                        compensate for my terrible overwatch gameplay!). 
+                        compensate for my terrible overwatch gameplay!).
                       </p>
                       <p className=" max-w-[520px]">
-                      Aside from coding and designing, I enjoy bike rides and
+                        Aside from coding and designing, I enjoy bike rides and
                         exploring new places. I am currently setting up a coding
                         society which I look forward to running in the future!
                       </p>
@@ -419,11 +419,11 @@ function App() {
               <div className="contactElement flex flex-column justify-between">
                 <i className="fa-brands fa-linkedin text-[var(--primaryColour)]"></i>
                 <a
-                  href="https://www.linkedin.com/in/tye-goulder-2b59b4256/"
+                  href="https://linkedin.com/in/tye-goulder-2b59b4256/"
                   target="_blank"
                   id="linkedIn"
                 >
-                  Tye Goulder
+                  Tye G.
                 </a>
               </div>
             </summary>
