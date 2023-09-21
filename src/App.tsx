@@ -6,7 +6,7 @@ const creations: Array<itemProps["item"]> = [
     id: 1,
     title: "Product Designer",
     roleDescription:
-      "I am re-designing and developing a website for a youth-led mental health charity. We are conducting usability tests to ensure the website is designed to be accessible and easy to use for all visitors.", //The website was designed to be accessible and easy to use for all users.
+      "I am re-designing and developing a website for a youth-led mental health charity. The website is being designed and tested to be accessible and easy to use for all visitors, positively impacting hundreds of lives.", //The website was designed to be accessible and easy to use for all users.
     company: "ALBOS UK",
     companyURL: "https://albos.org.uk/",
     companyInfo: "A youth-led mental health charity",
@@ -25,7 +25,29 @@ const creations: Array<itemProps["item"]> = [
     url: "https://tgoulder4.github.io/projects/trainspy/",
   },
   {
+    id: 3,
+    title: "Light-Remote",
+    roleDescription:
+      "I created Light-Remote, a web app that allows you to control your smart lights from anywhere with WiFi. Combined my engineering and problem-solving skills to create a solution to a broken light bulb, using an NodeMCU (microcontroller) and a NRF2401 (transciever).",
+    company: "",
+    companyInfo: "",
+    companyURL: "",
+    img: "./github.png",
+    url: "https://github.com/tgoulder4/light-remote",
+  },
+  {
     id: 4,
+    title: "greenlens",
+    roleDescription:
+      "I am creating greenlens - Learn tailored content to your knowledge powered by AI, opposing the traditional one size fits all education style.",
+    company: "",
+    companyInfo: "",
+    companyURL: "",
+    img: "./glasses_green.png",
+    url: "https://tgoulder4.github.io/projects/greenlens/",
+  },
+  {
+    id: 5,
     title: "Learnmate",
     roleDescription:
       "I created Learnmate, a prototype educational tool providing tailored content recommendations, practice questions, and time management tools. Used by many classmates.",
@@ -36,7 +58,7 @@ const creations: Array<itemProps["item"]> = [
     url: "https://tgoulder4.github.io/projects/Learnmate/",
   },
   {
-    id: 3,
+    id: 6,
     title: "Portfolio",
     roleDescription: "I created this portfolio.",
     company: "",
