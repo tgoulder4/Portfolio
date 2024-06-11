@@ -16,12 +16,7 @@
   animation: fadeFromTransparent 1s linear forwards;
 }
 #rails {
-  width: 100%;
-  border-bottom: 15px solid var(--primaryColour);
-  display: flex;
-  justify-content: center;
   margin-top: var(--navHeight);
-  z-index: 1;
   height: 35vw;
   max-height: 500px;
   min-height: 350px;
@@ -129,9 +124,6 @@
 .line {
   background-color: var(--lineColour);
   flex-shrink: 0;
-}
-.partHeight {
-  height: 100%;
 }
 
 #fanaticalTitle {
@@ -461,7 +453,7 @@ img {
       #quoteArea {
         grid-area: summary;
         p {
-          font-weight: 400;
+          font-weight: 200;
           color: var(--primaryColour);
         }
         border-right: 2px solid var(--grey);
@@ -780,56 +772,11 @@ img {
   flex-direction: column;
   justify-content: center;
 }
-.reverse {
-  flex-direction: row-reverse;
-}
-.whFiller {
-  width: 100%;
-  height: 100%;
-}
-.wFiller {
-  width: 100%;
-}
 .w-var-greyblw {
   width: var(--GREYBLOCKWIDTH);
-}
-.analysis-Purple {
-  border: 12px solid purple;
 }
 .flex-xl-gap-0 {
   @media (min-width: 1400px) {
     gap: 0px;
   }
-}
-.h-30px {
-  height: 30px;
-}
-.w-250px {
-  width: 250px;
-}
-.h-500px {
-  height: 500px;
-}
-
-.minw-xl-w-100-h-100-minw-80px {
-  @media (min-width: $BPxl) {
-    width: 100%;
-    height: 100%;
-    min-width: 80px;
-  }
-}
-.maxw-xl-h-100px-w-100 {
-  @media (max-width: $BPxl) {
-    height: 100px;
-    width: 100%;
-  }
-}
-.minw-80px {
-  min-width: 80px;
-}
-.maxw-150px {
-  max-width: 150px;
-}
-.h-800px {
-  height: 800px;
 }

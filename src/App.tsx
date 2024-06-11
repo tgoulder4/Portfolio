@@ -68,21 +68,34 @@ const creations: Array<itemProps["item"]> = [
     url: "#",
   },
 ];
+interface dividerProps extends React.HTMLAttributes<HTMLDivElement> {
+  // You can add other custom props here if needed
+  direction?: "horizontal" | "vertical";
+  mode?: "thick" | "thin";
+  className?: string;
 
+}
+const Divider = ({ direction, mode, className, ...props }: dividerProps) => {
+  if (mode == "thin") return <div {...props} className={`${className} border-[1px] border-[#dddddd] ${direction == "horizontal" ? "w-full " : "h-full "}`} />;
+  else if (mode == "thick") return <div {...props}
+    id="lFiller1"
+    className={`${className} filler absolute hidden sm:block left-0 w-7vw md:w-[12.5vw] bg-[#191919] goesToLeft h-[calc(1006px-var(--CYANMARGINWIDTH))]`}
+  />
+}
 function App() {
   return (
     <>
       <header>
         <div className="topCover z-[4] absolute w-full h-full bg-[var(--secondary\_colour)]"></div>
-        <div id="rails" className="">
+        <div id="rails" className="w-full flex z-[1] justify-center border-b-[#191919] border-b-[15px]">
           {/*auto layout, 'sliding' across rails. width is screen width + 2* size of width of 1 cover. (0.5vw). center by display:flex justify-content: center on html*/}
           <div className="cover" id="coverLeft"></div>
           {/*covers have the highest z-index, and always cover viewport height until reveal. disable scroll while covered*/}
           <div id="mainReveal">
             {/*width goes from zero to vw upon animation*/}
-            <div className="accordion partHeight" id="accordionLeft">
+            <div className="accordion h-full" id="accordionLeft">
               <div
-                className="lgAccCont partHeight hidden lg:flex"
+                className="lgAccCont h-full hidden lg:flex"
                 id="lgAccCont"
               >
                 <div className="line hLine"></div>
@@ -92,7 +105,7 @@ function App() {
               {/*Holds the 3 lines for the larger column on the left/right*/}
               <div className="vLine line tallVLine hidden lg:flex"></div>
               {/*color: difference*/}
-              <div className="smAccCont d-flex">
+              <div className="smAccCont flex">
                 <div className="line hLine"></div>
                 <div className="line hLine"></div>
                 <div className="line hLine"></div>
@@ -100,9 +113,9 @@ function App() {
               {/*Holds the 3 lines for the smaller column on the left/right*/}
               <div className="line vLine"></div>
             </div>
-            <div id="center" className="partHeight">
+            <div id="center" className="h-full">
               {/*flex downwards*/}
-              <div className="centerAccordion mt-5per">
+              <div className="centerAccordion mt-[5%]">
                 {/*flex downwards*/}
                 <div className="line hLine"></div>
                 <div className="centAccCont">
@@ -114,17 +127,17 @@ function App() {
               </div>
               <div
                 id="shapeShift-container"
-                className="flex justify-center p-[var(--standardMargin)]"
+                className="flex justify-center p-[50px]"
               >
                 {/*shapeshift group*/}
                 <div
                   id="shapeShift"
-                  className="h-100 relative min-w-[200px] z-10 flex gap-[5px] flex-col items-center"
+                  className="h-full relative min-w-[200px] z-10 flex gap-[5px] flex-col items-center"
                 >
                   <Logo />
                 </div>
               </div>
-              <div className="centerAccordion mb-5per">
+              <div className="centerAccordion mb-[5%]">
                 {/*flex downwards*/}
                 <div className="centAccCont">
                   {/*used to keep the line centered always*/}
@@ -133,9 +146,9 @@ function App() {
                 <div className="line hLine"></div>
               </div>
             </div>
-            <div className="accordion partHeight" id="accordionRight">
+            <div className="accordion h-full" id="accordionRight">
               <div className="line vLine"></div>
-              <div className="smAccCont d-flex">
+              <div className="smAccCont flex">
                 {/*Holds the 3 lines for the smaller column on the left/right*/}
                 <div className="line hLine"></div>
                 <div className="line hLine"></div>
@@ -145,7 +158,7 @@ function App() {
               {/*color: difference*/}
 
               <div
-                className="lgAccCont partHeight hidden lg:flex"
+                className="lgAccCont h-full hidden lg:flex"
                 id="lgAccCont2"
               >
                 <div className="line hLine"></div>
@@ -161,88 +174,104 @@ function App() {
         </div>
         <nav
           id="navbar"
-          className="position-absolute z-[3] w-100 back-color-primary d-flex justify-content-center align-items-center"
+          className="position-absolute z-[3] w-100 back-color-primary flex justify-content-center align-items-center"
         >
-          <ul className="w-100 d-flex justify-items-center items-center justify-content-between">
+          <ul className="w-100 flex justify-items-center items-center justify-content-between">
             <li>
               <a href="#contactMeSection">CONTACT</a>
             </li>
-            {/* <li>
-              <div
-                className="p-2 bg-orange-800 items-center text-orange-100 leading-none rounded-full flex"
-                role="alert"
-              >
-                <span className="flex rounded-full bg-orange-500 uppercase px-2 py-1 text-xs font-bold mr-3">
-                  ⚠
-                </span>
-                <span className="font-semibold mr-2 text-left flex-auto">
-                  Partially complete - check back later!
-                </span>
-                <svg
-                  className="fill-current opacity-75 h-4 w-4"
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 20 20"
-                ></svg>
-              </div>
-            </li> */}
             <li className="moveLeft">
               <a href="#aboutMeSection">ABOUT</a>
             </li>
           </ul>
         </nav>
       </header>
+      {/* REBUILD---------------------- */}
+      {/* <main className="analysis-Green flex flex-col">
+        <section className="analysis-Red flex flex-row w-full">
+          <div className="filler h-full w-10"></div>
+          <Divider direction="vertical" />
+          <div className="h-full w-10 constGreyFiller"></div>
+          <Divider direction="vertical" />
+          <div className="flex-col">
+            <article className="flex-col analysis-Cyan">
+              <summary className=" text-[#191919] mb-[40px] hidden xl:flex justify-between">
+                <p>TYE</p>
+                <p>-</p>
+                <p>SOFTWARE DEVELOPER</p>
+                <p>|</p>
+                <p>LOVES OVERWATCH</p>
+              </summary>
+              <h1
+                id="fanaticalTitle"
+                className="relative tracking-[0.9] font-bold mb-[10px] text-center sm:text-left text-[15vw]"
+              >
+                FANATICAL ABOUT CREATIVITY
+                <div className="h-24 bg-[#dddddd] absolute top-0 left-0" />
+              </h1>
+            </article>
+            <div className="flex flex-col items-start justify-center gap-2">
+              <i className="fa-sharp fa-solid fa-quote-left text-2xl text-[#dddddd]"></i>
+              <p className=" w-[60%]">
+                I’m Tye, a self-taught software developer & designer from Birmingham UK. With a keen eye for user experience, I continually refine my product design skills while practicing my development abilities to create unique projects I’m passionate about.
+              </p>
+            </div>
+          </div>
+        </section>
+      </main> */}
+      {/* REBUILD is above-------------------- */}
       <main
         id="green"
-        className="analysis  d-flex justify-content-center position-relative"
+        className="analysis-Green flex justify-content-center relative text-2xl" style={{ fontFamily: "Roboto, sans-serif", fontWeight: 300 }}
       >
         <div
           id="red"
-          className="analysis  d-flex greyBdr-left flex-column sm:w-3/4 w-full"
+          className="analysis-Red flex greyBdr-left flex-column sm:w-3/4 w-full"
         >
           <div
             id="lFiller1"
-            className="filler position-absolute hidden sm:block left-0 w-7vw md:w-[12.5vw] bg-[var(--primaryColour)] mt-100 goesToLeft h-[1506px]"
-          ></div>
+            className="filler absolute hidden sm:block left-0 w-7vw md:w-[12.5vw] bg-[#191919] goesToLeft h-[calc(1006px-var(--CYANMARGINWIDTH))]"
+          />
           {/* absolute, move this to the left and down, left 0*/}
           <section
             id="yellow1"
-            className="analysis  flex-column pl-ForDesk-0ForMob d-flex align-items-stretch greyBdr-bottom"
+            className=" flex-column pl-ForDesk-0ForMob flex align-items-stretch greyBdr-bottom"
           >
-            {/*---*/}
+            {/*-------------------------------------------------------*/}
             <div
               id="cyan"
-              className="cyan analysis  d-flex flex-column-reverse flex-xl-row align-items-xl-end"
+              className="cyan analysis-Cyan flex flex-col-reverse flex-xl-row align-items-xl-end"
             >
-              <div className="fullHeightLeftVertGreyLine h-100 position-relative"></div>
+              <div className="fullHeightLeftVertGreyLine h-full position-relative"></div>
               {/*spans the whole height*/}
 
-              <div className="analysis  deskLeftBanner minw-150px h-full ml-[-2px] d-none d-xl-flex greyBdr-left greyBdr-right w-var-greyblw bg-[var(--lighterGrey)] justify-center">
+              <div className=" deskLeftBanner min-w-[150px] h-full ml-[-2px] d-none d-xl-flex greyBdr-left greyBdr-right w-var-greyblw bg-[var(--lighterGrey)] justify-center">
                 <div
                   id="greySocials"
-                  className="greySocialsContainer flex flex-col justify-between pb-[var(--standardMargin)] mt-[var(--CYANMARGINWIDTH)]"
+                  className="greySocialsContainer flex flex-col justify-between pb-[50px] mt-[var(--CYANMARGINWIDTH)]"
                 >
                   <a
                     href="https://www.linkedin.com/in/tye-goulder-2b59b4256/"
                     target="_blank"
                   >
-                    <i className="fa-brands fa-linkedin text-[var(--primaryColour)] text-2xl"></i>
+                    <i className="fa-brands fa-linkedin text-[#191919] text-2xl"></i>
                   </a>
                   <a href="mailto:tcjgoulder@gmail.com" target="_blank">
-                    <i className="fa-solid fa-envelope text-[var(--primaryColour)] text-2xl"></i>
+                    <i className="fa-solid fa-envelope text-[#191919] text-2xl"></i>
                   </a>
                   <a href="tel:+447342159087" target="_blank">
-                    <i className="fa-solid fa-phone text-[var(--primaryColour)] text-2xl"></i>
+                    <i className="fa-solid fa-phone text-[#191919] text-2xl"></i>
                   </a>
                 </div>
               </div>
-              <div className="longLeft-RightVertGreyLine h-30px relative"></div>
+              <div className="longLeft-RightVertGreyLine h-[30px] relative"></div>
               {/*spans 1.5 sections*/}
-              {/*ml-40 is needed for non analysis alignment*/}
+              {/*ml-40 is needed for non alignment*/}
               <article
                 id="purple2"
-                className="analysis  sm:ml-[52px] sm:mb-[60px] sm:pt-[var(--CYANMARGINWIDTH)] sm:pb-0 py-[calc(var(--mobileStandardMargin)_+_50px)] meFanaticalAndDescription"
+                className=" sm:ml-[52px] sm:mb-[60px] sm:pt-[var(--CYANMARGINWIDTH)] sm:pb-0 py-[calc(var(--mobileStandardMargin)_+_50px)] meFanaticalAndDescription"
               >
-                <summary className="whoAndWhatIAm text-[var(--primaryColour)] mb-[40px] d-none d-xl-flex justify-between">
+                <summary className="whoAndWhatIAm text-[#191919] mb-[40px] d-none d-xl-flex justify-between">
                   <p>TYE</p>
                   <p>-</p>
                   <p>SOFTWARE DEVELOPER</p>
@@ -253,14 +282,14 @@ function App() {
                 {/* a */}
                 <h1
                   id="fanaticalTitle"
-                  className="position-relative lineh-0p9 font-semibold mb-[10px] text-center sm:text-left text-[15vw] lg:text-[90pt] tracking-wide sm:w-[635px]"
+                  className="position-relative lineh-0p9 font-semibold mb-[10px] text-center sm:text-left text-[15vw] lg:text-[140pt] tracking-wide sm:w-[635px]"
                 >
                   FANATICAL ABOUT <em>CREATIVITY</em>
                 </h1>
               </article>
             </div>
           </section>
-          {/*---*/}
+          {/*-------------------------------------------------------*/}
 
           <div className="HigherContForRightFiller">
             <div
@@ -268,61 +297,46 @@ function App() {
               className="divider thiccDivider position-absolute goesToRight"
             ></div>
             <div className="LowerContForLeftFiller position-relative">
-              <div id="yellow2" className="analysis ">
+              <div id="yellow2" className="">
                 <div
                   id="lightGreyDown"
                   className="greybgFiller d-none d-xl-block position-absolute"
                 ></div>
               </div>
 
-              {/*current*/}
-              <section id="yellow3" className="analysis ">
-                <div id="contentS2" className="cyan cyan2 analysis ">
-                  {/*grid!*/}
-                  <div id="place1" className="analysis "></div>
-                  <div
-                    id="quoteArea"
-                    className="purple3 analysis flex flex-col md:flex-row gap-12 justify-between greyBdr-left  px-[var(--mobileStandardMargin)] sm:px-[var(--standardMargin)] pb-[70px] pt-[50px]"
+              <section id="yellow3" className="">
+                <div id="contentS2" className="cyan cyan2 ">
+                  <div id="place1" className=""></div>
+                  <div id="quoteArea"
+                    className="purple3 flex flex-col md:flex-row gap-12 justify-between greyBdr-left  px-[var(--mobileStandardMargin)] sm:px-[50px] pb-[70px] pt-[50px]"
                   >
                     <div className="flex flex-col items-start justify-center gap-2">
-                      <i className="fa-sharp fa-solid fa-quote-left text-2xl text-[var(--grey)]"></i>
-                      <p className=" max-w-[520px]">
-                        I develop intuitive projects with a strong focus on user
-                        experience! I enjoy exploring possible solutions to a
-                        problem, and I am always looking to learn new skills (to
-                        compensate for my terrible overwatch gameplay!).
-                      </p>
-                      <p className=" max-w-[520px]">
-                        Aside from coding and designing, I enjoy bike rides and
-                        exploring new places. I am currently setting up a coding
-                        society which I look forward to running in the future!
+                      <i className="fa-sharp fa-solid fa-quote-left text-2xl text-[#dddddd]"></i>
+                      <p className=" w-[60%]">
+                        I’m Tye, a self-taught software developer & designer from Birmingham UK. With a keen eye for user experience, I continually refine my product design skills while practicing my development abilities to create unique projects I’m passionate about.
                       </p>
                     </div>
-                    <img
-                      src="./me.jpg"
-                      className="h-[200px] object-scale-down"
-                      alt="Tye Goulder"
-                    />
                   </div>
-                  <div id="place3" className="analysis  greyBdr-all"></div>
-                  <div
-                    id="projectArea"
-                    className="purple4 analysis px-[var(--mobileStandardMargin)] sm:px-[var(--standardMargin)] d-flex flex-column greyBdr-top"
+                  <div id="place3" className=" greyBdr-all"></div>
+                  <div id="projectArea"
+                    className="relative purple4 px-[var(--mobileStandardMargin)] sm:px-[50px] flex flex-column"
                   >
+                    <Divider style={{ width: '200vw' }} className="absolute left-[-50vw] top-0" direction="horizontal" mode="thin" />
                     <div
                       id="ttleProjects"
-                      className="green2 analysis  d-flex flex-column"
+                      className="green2 w-full flex flex-column"
                     >
-                      <div className="legend d-flex justify-content-between"></div>
+                      <div className="legend flex justify-content-between"></div>
                       <h2 className="projectTitleText">MY WORK</h2>
-                      <h2 className="projectTitleText text-[var(--gray)]">
-                        ////////////////
+                      <h2 className="w-full overflow-hidden projectTitleText text-[#D9D9D9]">
+                        //////////////////////////////////////////////////////////////////
                       </h2>
+                      <Divider style={{ width: '200vw' }} className="absolute left-[-50vw] top-0" direction="horizontal" mode="thin" />
                     </div>
                     <MyCarousel creations={creations} />
                   </div>
                   <div className="githubWrapper  greyBdr-right">
-                    <div className="analysis  shortHeightWrapper d-flex justify-content-center">
+                    <div className=" shortHeightWrapper flex justify-content-center">
                       <a
                         href="https://github.com/tgoulder4"
                         target="_blank"
@@ -332,8 +346,6 @@ function App() {
                       </a>
                     </div>
                   </div>
-                  <div id="place4" className="analysis  greyBdr-bottom"></div>
-                  <div id="place3" className="analysis  greyBdr-all"></div>
                 </div>
               </section>
             </div>
@@ -350,19 +362,19 @@ function App() {
           <div className="fillerContainer">
             <div className="Rfiller absolute h-[617px] lg:h-[443px]"></div>
           </div>
-          <section className="analysis " id="yellow4">
-            <div id="aboutMeSection" className="analysis  cyan3">
+          <section className="" id="yellow4">
+            <div id="aboutMeSection" className=" cyan3">
               <div id="bl1" className="greyBdr-right"></div>
               <div id="bl2" className="greyBdr-top"></div>
               <div id="bl3" className="greyBdr-left greyBdr-right"></div>
               <div
                 id="titleArea"
-                className="d-flex px-[var(--mobileStandardMargin)] sm:px-[var(--standardMargin)] position-relative greyBdr-bottom"
+                className="flex px-[var(--mobileStandardMargin)] sm:px-[50px] position-relative greyBdr-bottom"
               >
                 <h2>ABOUT ME</h2>
               </div>
               <div id="skillSetArea" className="flex flex-col lg:flex-row">
-                <div className="myEvolvingSkillset text-xl p-[var(--standardMargin)]">
+                <div className="myEvolvingSkillset text-xl p-[50px]">
                   {/* Item */}
                   <div className="flex justify-between space-x-6 items-center pb-6">
                     <div className="flex items-center space-x-4">
@@ -370,7 +382,7 @@ function App() {
                         <span className="font-bold">Computer Science</span>
                       </div>
                     </div>
-                    <i className="fa-solid fa-network-wired text-2xl text-[var(--primaryColour)]"></i>
+                    <i className="fa-solid fa-network-wired text-2xl text-[#191919]"></i>
                   </div>
                   {/* Item */}
 
@@ -381,7 +393,7 @@ function App() {
                         <span className="font-bold">Mathematics</span>
                       </div>
                     </div>
-                    <i className="fa-solid fa-square-root-variable text-2xl text-[var(--primaryColour)]"></i>
+                    <i className="fa-solid fa-square-root-variable text-2xl text-[#191919]"></i>
                   </div>
                   {/* Item */}
 
@@ -392,14 +404,14 @@ function App() {
                         <span className="font-bold">Physics</span>
                       </div>
                     </div>
-                    <i className="fa-solid fa-atom text-2xl text-[var(--primaryColour)]"></i>
+                    <i className="fa-solid fa-atom text-2xl text-[#191919]"></i>
                   </div>
                   {/* Item */}
                   <i className="text-sm">(A-Levels)</i>
                 </div>
-                <div className="anotherQuote p-[var(--standardMargin)] flex flex-col gap-[var(--mobileStandardMargin)] sm:gap-[var(--standardMargin)]">
+                <div className="anotherQuote p-[50px] flex flex-col gap-[var(--mobileStandardMargin)] sm:gap-[50px]">
                   <div className="flex flex-col">
-                    <i className="fa-sharp fa-solid fa-quote-left text-2xl text-[var(--grey)]"></i>
+                    <i className="fa-sharp fa-solid fa-quote-left text-2xl text-[#dddddd]"></i>
                     <p>
                       I excel in problem-solving and attention to detail, gained
                       from my passion for maths, physics and computer science.
@@ -412,34 +424,34 @@ function App() {
           <div className="dividerContainer">
             <div className="Divider position-absolute goesToRight goesToLeft w-100"></div>
           </div>
-          <section className="analysis  yellow5 grid" id="contactMeSection">
+          <section className=" yellow5 grid" id="contactMeSection">
             <div id="bl1" className="greyBdr-right"></div>
             <div id="bl2" className="greyBdr-left greyBdr-right"></div>
             <div id="bl3" className="greyBdr-right"></div>
             <div
               id="titleArea"
-              className="flex px-[var(--mobileStandardMargin)] sm:px-[var(--standardMargin)] pb-[30px] position-relative greyBdr-bottom"
+              className="flex px-[var(--mobileStandardMargin)] sm:px-[50px] pb-[30px] position-relative greyBdr-bottom"
             >
               <h2>CONTACT ME</h2>
             </div>
             <summary
               id="details"
-              className="flex flex-wrap gap-2 justify-between px-[var(--mobileStandardMargin)] sm:px-var[(--standardMargin)] py-[var(--standardMargin)] pb-[100px]"
+              className="flex flex-wrap gap-2 justify-between px-[var(--mobileStandardMargin)] sm:px-var[(--standardMargin)] py-[50px] pb-[100px]"
             >
               <div className="contactElement flex flex-column justify-between">
-                <i className="fa-solid fa-phone text-[var(--primaryColour)]"></i>
+                <i className="fa-solid fa-phone text-[#191919]"></i>
                 <a href="tel:+447342159087" target="_blank">
                   <div id="phone">07342159087</div>
                 </a>
               </div>
               <div className="contactElement flex flex-column justify-between">
-                <i className="fa-solid fa-envelope text-[var(--primaryColour)]"></i>
+                <i className="fa-solid fa-envelope text-[#191919]"></i>
                 <a href="mailto:tcjgoulder@gmail.com" target="_blank">
                   <div id="email">tcjgoulder@gmail.com</div>
                 </a>
               </div>
               <div className="contactElement flex flex-column justify-between">
-                <i className="fa-brands fa-linkedin text-[var(--primaryColour)]"></i>
+                <i className="fa-brands fa-linkedin text-[#191919]"></i>
                 <a
                   href="https://linkedin.com/in/tye-goulder-2b59b4256/"
                   target="_blank"
