@@ -483,7 +483,7 @@ img {
             p:nth-child(2) {
               text-decoration: underline;
             }
-            font-size: 1rem;
+            font-size: 1.5rem;
           }
         }
         .green3 {
@@ -496,7 +496,7 @@ img {
             summary {
               padding: 0.8rem;
               p {
-                font-weight: 700;
+                font-weight: 300;
                 margin-bottom: 2px;
               }
               .btn-info {
@@ -600,7 +600,7 @@ img {
       .myEvolvingSkillset {
         flex-basis: 50%;
         h3 {
-          font-size: 1rem;
+          font-size: 1.5rem;
           white-space: nowrap;
         }
         .skillSetContainer {
