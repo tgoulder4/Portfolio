@@ -23,7 +23,8 @@ function Project({
     return (
         <>
             <Divider className="ml-[-50vw] w-[150vw]" direction="horizontal" mode="thin" />
-            <div className="ml-[-50vw] mr-[-20vw] pr-[20vw]" style={{ backgroundColor: primaryColour, paddingTop: padding.normal, paddingBottom: padding.normal, fontFamily: fontFamily }}>
+            <div className="ml-[-50vw] mr-[-20vw] pr-[20vw] flex flex-row" style={{ backgroundColor: primaryColour, paddingTop: padding.normal, paddingBottom: padding.normal, fontFamily: fontFamily }}>
+                <Divider className='h-[100vh] bg-black opacity-50' direction='vertical' mode='thin' />
                 <div className="ml-[50vw] flex flex-col gap-5">
                     {Logo}
                     <div className="content font-extrabold text-white text-3xl" style={{ fontFamily: fontFamily }}>{name}</div>
@@ -40,6 +41,7 @@ function Project({
                         </div>
                     </div>
                 </div>
+                <Divider className='h-[100vh] bg-black opacity-50' direction='vertical' mode='thin' />
             </div>
         </>
     )
