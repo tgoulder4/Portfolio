@@ -27,10 +27,10 @@ function Project({
 }: ProjectProps) {
     return (
         <div className='grid place-items-center'>
-            <Divider className="ml-[-50vw] w-[150vw]" direction="horizontal" mode="thin" />
-            <div className="ml-[-50vw] justify-between mr-[-20vw] md:pr-[16.5vw] flex flex-row" style={{ backgroundColor: primaryColour, fontFamily: fontFamily }}>
+            <Divider className="" direction="horizontal" mode="thin" />
+            <div className="justify-between flex flex-row" style={{ backgroundColor: primaryColour, fontFamily: fontFamily }}>
                 <Divider className='DIVIDER h-[89vh] border-black opacity-20' direction='vertical' mode='thin' />
-                <div style={{ marginTop: padding.normal, marginBottom: padding.normal }} className="ml-[50vw] w-1/2 flex flex-col gap-5">
+                <div style={{ marginTop: padding.normal, marginBottom: padding.normal }} className="ml-[var(--mobileStandardMargin)] sm:ml-[50px] w-full flex flex-col gap-5">
                     {Logo}
                     <div className="content font-extrabold text-white text-3xl" style={{ fontFamily: fontFamily }}>{name}</div>
                     <h2 className='text-white '>{description}</h2>
