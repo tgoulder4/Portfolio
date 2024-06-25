@@ -11,7 +11,7 @@ interface ProjectProps extends React.HTMLAttributes<HTMLDivElement> {
     primaryColour: string,
     description: string,
     videoIDs: Array<string>,
-    imageURLs: Array<string>,
+    imageURLs?: Array<string>,
 }
 
 function Project({
@@ -27,14 +27,14 @@ function Project({
 }: ProjectProps) {
     return (
         <div className='grid place-items-center'>
-            <Divider className="ml-[-50vw] w-[150vw]" direction="horizontal" mode="thin" />
-            <div className="ml-[-50vw] justify-between mr-[-20vw] md:pr-[16.5vw] flex flex-row" style={{ backgroundColor: primaryColour, fontFamily: fontFamily }}>
+            <Divider className="ml-[-50vw] w-full" direction="horizontal" mode="thin" />
+            <div className="justify-between flex flex-row" style={{ backgroundColor: primaryColour, fontFamily: fontFamily }}>
                 <Divider className='DIVIDER h-[89vh] border-black opacity-20' direction='vertical' mode='thin' />
-                <div style={{ marginTop: padding.normal, marginBottom: padding.normal }} className="ml-[50vw] w-1/2 flex flex-col gap-5">
+                <div style={{ marginTop: padding.normal, marginBottom: padding.normal }} className="flex sm:ml-[50px] flex-col gap-5">
                     {Logo}
                     <div className="content font-extrabold text-white text-3xl" style={{ fontFamily: fontFamily }}>{name}</div>
-                    <h2 className='text-white '>{description}</h2>
-                    <div className="media-container overflow-x-auto">
+                    <h2 className='text-white pr-[20vw]'>{description}</h2>
+                    <div className="media-container overflow-x-auto w-[65vw]">
                         <div className="flex flex-row ">
                             {
                                 videoIDs.map((id, index) => {
