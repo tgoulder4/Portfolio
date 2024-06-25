@@ -26,9 +26,9 @@ function Project({
     ...props
 }: ProjectProps) {
     return (
-        <div className='grid place-items-center'>
+        <div className='grid place-items-center pl-[30vw] ml-[-30vw] pr-[30vw] mr-[-30vw]' style={{ backgroundColor: primaryColour, fontFamily: fontFamily }}>
             <Divider className="ml-[-50vw] w-full" direction="horizontal" mode="thin" />
-            <div className="justify-between flex flex-row" style={{ backgroundColor: primaryColour, fontFamily: fontFamily }}>
+            <div className="justify-between flex flex-row">
                 <Divider className='DIVIDER h-[89vh] border-black opacity-20' direction='vertical' mode='thin' />
                 <div style={{ marginTop: padding.normal, marginBottom: padding.normal }} className="flex sm:ml-[50px] flex-col gap-5">
                     {Logo}

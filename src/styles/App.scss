@@ -15,6 +15,12 @@
 .tallVLine {
   animation: fadeFromTransparent 1s linear forwards;
 }
+a{
+  text-decoration: underline;
+  :hover{
+    color: var(--primaryColour);
+  }
+}
 #rails {
   margin-top: var(--navHeight);
   height: 35vw;
@@ -600,7 +606,6 @@ img {
       .myEvolvingSkillset {
         flex-basis: 50%;
         h3 {
-          font-size: 1.5rem;
           white-space: nowrap;
         }
         .skillSetContainer {
