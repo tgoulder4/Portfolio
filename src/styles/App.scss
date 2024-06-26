@@ -4,6 +4,11 @@
 @import "./variables.scss";
 @import "./reset.scss";
 
+.projectGrid{
+  @media (min-width:1280px) {
+    padding-left: calc(30vw - var(--CYANMARGINWIDTH))
+  }
+}
 .coverAnim {
   @include introAnimation(introduceOpacity);
 }

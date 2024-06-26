@@ -36,7 +36,7 @@ function Project({
     return (<> {expanded ?
         <div className="project">
             {/* xl:ml-[calc(-30vw_+_var(--CYANMARGINWIDTH)] xl:pl-[calc(30vw_+_var(--CYANMARGINWIDTH)] not working */}
-            <div className='grid place-items-center pl-[30vw] ml-[-30vw] xl:ml-[calc(-30vw_+_var(--CYANMARGINWIDTH)] xl:pl-[calc(30vw_+_var(--CYANMARGINWIDTH)] pr-[30vw] mr-[-30vw]' style={{ backgroundColor: primaryColour, fontFamily: fontFamily }}>
+            <div className='projectGrid grid place-items-center pl-[30vw] ml-[-30vw] xl:pl-[calc(30vw_-_var(--CYANMARGINWIDTH)] pr-[30vw] mr-[-30vw]' style={{ backgroundColor: primaryColour, fontFamily: fontFamily }}>
                 <div className="justify-between flex flex-row">
                     <Divider className='xl:block hidden mr-[var(--CYANMARGINWIDTH)] DIVIDER h-[89vh] border-black opacity-40' direction='vertical' mode='thin' />
                     <Divider className='DIVIDER h-[89vh] border-black opacity-40' direction='vertical' mode='thin' />
@@ -45,7 +45,7 @@ function Project({
                         <div className="content font-extrabold text-white text-3xl" style={{ fontFamily: fontFamily }}>{name}</div>
                         <h2 className='text-white pr-[25vw]'>{description}</h2>
                         <div className="media-container overflow-x-auto w-[65vw]">
-                            <div className="flex flex-row gap-3">
+                            <div className="flex flex-row">
                                 {
                                     videoIDs.map((id, index) => {
                                         return (

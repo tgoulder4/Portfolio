@@ -1,4 +1,4 @@
-import Logo from "@tyeg4/components";
+
 import MyCarousel from "./components/Carousel";
 import { itemProps } from "./components/Carousel";
 import Project from "./components/Main/ProjectSection/Project";

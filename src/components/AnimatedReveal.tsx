@@ -1,5 +1,4 @@
 
-import Logo from '@tyeg4/components'
 function AnimatedReveal() {
     return (
         <div id="rails" className="w-full flex z-[1] justify-center border-b-[#191919] border-b-[15px]">
@@ -49,7 +48,25 @@ function AnimatedReveal() {
                             id="shapeShift"
                             className="h-full relative min-w-[200px] z-10 flex gap-[5px] flex-col items-center"
                         >
-                            <Logo />
+                            <video
+                                id="my-player"
+                                className="video-js h-[20vh]"
+                                autoPlay
+                                muted
+                                preload="auto"
+                                loop
+                                poster="logoPoster.jpg"
+                                data-setup='{}'>
+                                <source src="LogoAnim.mp4" type="video/mp4"></source>
+                                <p className="vjs-no-js">
+                                    To view this video please enable JavaScript, and consider upgrading to a
+                                    web browser that
+                                    <a href="https://videojs.com/html5-video-support/" target="_blank">
+                                        supports HTML5 video
+                                    </a>
+                                </p>
+                            </video>
+
                         </div>
                     </div>
                     <div className="centerAccordion mb-[5%]">
