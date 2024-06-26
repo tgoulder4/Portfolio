@@ -3,6 +3,7 @@
 @import "./mixins.scss";
 @import "./variables.scss";
 @import "./reset.scss";
+
 .coverAnim {
   @include introAnimation(introduceOpacity);
 }
