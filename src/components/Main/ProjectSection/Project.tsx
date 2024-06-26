@@ -1,4 +1,4 @@
-import React, { ReactNode, useEffect, useRef } from 'react'
+import React, { ReactNode, useEffect, useRef, useState } from 'react'
 import { Divider } from '../../../App'
 import { padding } from '../../../lib/spacing'
 import TechnologyUsed from './TechnologyUsed'
@@ -28,39 +28,32 @@ function Project({
     ...props
 }: ProjectProps) {
     const videoRef = useRef<HTMLVideoElement>(null)
-    const videoWidth = useRef<number>(0)
+    const [videoWidth, setVideoWidth] = useState<number>(0)
     useEffect(() => {
-        videoWidth.current = videoRef.current?.offsetWidth || 0
+        setVideoWidth(videoRef.current?.offsetWidth || 0)
         console.log(videoWidth)
     }, [])
     return (<> {expanded ?
         <div className="project">
-            <div className='grid place-items-center pl-[30vw] ml-[-30vw] pr-[30vw] mr-[-30vw]' style={{ backgroundColor: primaryColour, fontFamily: fontFamily }}>
+            {/* xl:ml-[calc(-30vw_+_var(--CYANMARGINWIDTH)] xl:pl-[calc(30vw_+_var(--CYANMARGINWIDTH)] not working */}
+            <div className='grid place-items-center pl-[30vw] ml-[-30vw] xl:ml-[calc(-30vw_+_var(--CYANMARGINWIDTH)] xl:pl-[calc(30vw_+_var(--CYANMARGINWIDTH)] pr-[30vw] mr-[-30vw]' style={{ backgroundColor: primaryColour, fontFamily: fontFamily }}>
                 <div className="justify-between flex flex-row">
+                    <Divider className='xl:block hidden mr-[var(--CYANMARGINWIDTH)] DIVIDER h-[89vh] border-black opacity-40' direction='vertical' mode='thin' />
                     <Divider className='DIVIDER h-[89vh] border-black opacity-40' direction='vertical' mode='thin' />
                     <div style={{ marginTop: padding.normal, marginBottom: padding.normal }} className="flex sm:ml-[50px] flex-col gap-5">
                         {Logo}
                         <div className="content font-extrabold text-white text-3xl" style={{ fontFamily: fontFamily }}>{name}</div>
-                        <h2 className='text-white pr-[20vw]'>{description}</h2>
+                        <h2 className='text-white pr-[25vw]'>{description}</h2>
                         <div className="media-container overflow-x-auto w-[65vw]">
                             <div className="flex flex-row gap-3">
                                 {
                                     videoIDs.map((id, index) => {
                                         return (
-                                            // <iframe
-                                            //     width="853"
-                                            //     height="480"
-                                            //     className='shrink-0'
-                                            //     src={`https://www.youtube.com/embed/${id}`}
-                                            //     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                            //     allowFullScreen
-                                            //     title="Embedded youtube"
-                                            // ></iframe>
                                             <video
                                                 id="my-player"
                                                 className="video-js shrink-0 h-[50vh] aspect-video"
                                                 ref={index == 0 ? videoRef : null}
-                                                controls
+
                                                 preload="auto"
                                                 poster="WhatIsDNY.png"
                                                 data-setup='{}'>
@@ -87,7 +80,7 @@ function Project({
                                 </div>
                             </div>
                         </div>
-                        <button className='h-12 bg-gray-900 drop-shadow-[0_0_35px_rgba(0,0,0,0.25)]' style={{ width: videoWidth.current }}>Test button</button>
+                        <button className='flex items-center justify-center text-white h-12 bg-[var(--primaryColour)] drop-shadow-[0_4px_0_rgba(0,0,0,1)] py-8' style={{ width: videoWidth, fontFamily: fontFamily }}>Next</button>
                     </div>
                     <Divider className='h-[89vh] border-black opacity-40' direction='vertical' mode='thin' />
                 </div>
